@@ -2,21 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import layoutStyles from "./layout.module.css"
 import { AnimationExample, PointerInteraction } from "../components/index-art"
+import { Blobs } from "../components/bg-art"
+import ColorScheme from "../utils/colorscheme"
 // import { Sidebar } from "../components/sidebar"
 
 const ListLink = props => (
   <li>
     <Link to={props.to}>{props.children}</Link>
   </li>
-)
-
-const Art = () => (
-  <PointerInteraction
-    name="pts_anim"
-    background="#fe3"
-    pause="false"
-    style={{ height: "100%" }}
-  />
 )
 
 const Sidebar = () => (
@@ -33,13 +26,14 @@ const Sidebar = () => (
 )
 
 let mousePos = {
-  x: 0,
-  y: 0
-};
+  x: 300,
+  y: 800,
+}
 
 document.documentElement.onmousemove = function(e) {
-  mousePos.x = e.clientX;
-  mousePos.y = e.clientY;
+  mousePos.x = e.clientX
+  mousePos.y = e.clientY
+  // console.log(`x: ${mousePos.x}, y: ${mousePos.y}`)
 }
 
 export default ({ children }) => (
@@ -48,8 +42,24 @@ export default ({ children }) => (
       <Sidebar />
       <div className={layoutStyles.content}>{children}</div>
     </div>
-    <div style={{ position: `fixed`, top: 0, left: 0, zIndex: -100, width: `100%`, height: `100%`, background: `blue`}}>
-      <Art mousePos={mousePos}/>
+    <div
+      style={{
+        position: `fixed`,
+        top: 0,
+        left: 0,
+        zIndex: -100,
+        width: `100%`,
+        height: `100%`,
+        background: `blue`,
+      }}
+    >
+      <Blobs
+        name="pts_anim"
+        background={ ColorScheme.background }
+        pause="false"
+        style={{ height: "100%" }}
+        mousePos={mousePos}
+      />
     </div>
   </div>
 )

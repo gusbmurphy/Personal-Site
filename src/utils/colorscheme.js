@@ -1,7 +1,8 @@
 const manPage = {
     background: "#FEF49C",
     text: "#000000",
-    highlight: "#BFB875"
+    highlight: "#BFB875",
+    secondary: "#FE0032"
 }
 
 const grass = {

@@ -1,8 +1,8 @@
 import Typography from "typography"
 import GithubTheme from "typography-theme-github"
-import colorScheme from "./colorscheme"
+import ColorScheme from "./colorscheme"
 
-// const colorScheme = {
+// const ColorScheme = {
 //   background: "#FEF49C",
 //   text: "#000000",
 //   highlight: "#BFB875"
@@ -10,7 +10,7 @@ import colorScheme from "./colorscheme"
 
 GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   html: {
-    background: `${colorScheme.background}`,
+    background: `${ColorScheme.background}`,
   },
   h1: {
     fontFamily: "Heebo, sans-serif",
@@ -27,20 +27,20 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     marginTop: rhythm(1),
   },
   h6: {
-    color: `${colorScheme.text}`,
+    color: `${ColorScheme.text}`,
   },
   a: {
-    color: `${colorScheme.highlight}`,
+    color: `${ColorScheme.highlight}`,
     textDecoration: "underline",
   },
   "a:hover,a:active": {
     textDecoration: "underline",
   },
   "a h1": {
-    color: `${colorScheme.text}`
+    color: `${ColorScheme.text}`
   }
 })
-GithubTheme.bodyColor = colorScheme.text
+GithubTheme.bodyColor = ColorScheme.text
 const typography = new Typography(GithubTheme)
 
 export const { scale, rhythm, options } = typography

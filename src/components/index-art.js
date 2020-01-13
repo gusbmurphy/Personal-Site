@@ -132,8 +132,8 @@ export class PyramidCells extends PtsCanvas {
 }
 
 export class PointerInteraction extends PtsCanvas {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.colors = [
       /*salmon*/ "#f65c78",
       /*orange*/ "#ffd271",
@@ -141,13 +141,14 @@ export class PointerInteraction extends PtsCanvas {
       /*green*/ "#c3f584",
       /*bg*/ "#edf7fa"
     ];
-    this.state = {cursorPos: new Pt([0, 0])}
-    this.onMouseMove = this.onMouseMove.bind(this);
+    this.state = {mousePos: new Pt([this.props.mousePos.x, this.props.mousePos.y])}
+    // this.onMouseMove = this.onMouseMove.bind(this);
+    this.getMousePos = this.getMousePos.bind(this);
   }
 
-  onMouseMove(e) {
-    this.setState({cursorPos: new Pt([e.clientX, e.clientY])});
-  }
+  // onMouseMove(e) {
+  //   this.setState({mousePos: new Pt([e.clientX, e.clientY])});
+  // }
 
   _create() {
   }
@@ -162,6 +163,10 @@ export class PointerInteraction extends PtsCanvas {
     this._create()
   }
 
+  getMousePos() {
+    return new Pt([this.props.mousePos.x, this.props.mousePos.y]);
+  }
+
   // Override PtsCanvas' animate function
   animate(time, ftime) {
     let t = Num.cycle((time % 5000) / 5000);
@@ -174,7 +179,7 @@ export class PointerInteraction extends PtsCanvas {
     ];
     
     // Calculate each center points distance to the cursor.
-    let cpDistance = centerPoints.map(cp => Line.magnitude([cp, this.space.pointer]));
+    let cpDistance = centerPoints.map(cp => Line.magnitude([cp, this.getMousePos()]));
     // Draw circles.
     let circles = [];
     for (let i = 0; i < centerPoints.length; i++) {
@@ -184,7 +189,7 @@ export class PointerInteraction extends PtsCanvas {
     }
     // Draw lines from center points and get intersections.
     centerPoints.forEach(point => {
-      let line = [point, this.space.pointer];
+      let line = [point, this.getMousePos()];
       this.form.strokeOnly("blue", 3, "round", "round").line(line);
 
       let inters = [];
