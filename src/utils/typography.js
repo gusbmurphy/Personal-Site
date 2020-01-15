@@ -15,7 +15,7 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   h1: {
     fontFamily: "Heebo, sans-serif",
     fontWeight: 1000,
-    borderBottom: "none",
+    borderBottom: "solid 1px black",
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(3 / 4),
     marginTop: rhythm(1.5),
@@ -34,6 +34,7 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     textDecoration: "underline",
   },
   "a:hover,a:active": {
+    color: "blue",
     textDecoration: "underline",
   },
   "a h1": {

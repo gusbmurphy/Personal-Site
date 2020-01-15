@@ -14,6 +14,13 @@
     float: left;
     margin-left: 0px;
 }
+.sidebar ul a {
+    color: black;
+    text-decoration: underline;
+}
+.sidebar ul a:hover {
+    color: blue;
+}
 
 .content {
     height: 100vh;

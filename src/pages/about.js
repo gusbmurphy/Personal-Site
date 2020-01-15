@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Text from "../components/text"
 
 export default () => (
-    <Layout>
+    // <Layout>
       <Text>
         <div>
           <h1>Lorem Ipsum</h1>
@@ -71,6 +71,6 @@ export default () => (
           </p>
         </div>
       </Text>
-    </Layout>
+    // </Layout>
   )
   

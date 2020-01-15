@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
-import { AnimationExample, PyramidCells } from "../components/index-art"
+import Text from "../components/text"
 
 export default () => (
-  <Layout>
-  </Layout>
+  <Text>
+    <p>This is truly the index.</p>
+  </Text>
 )

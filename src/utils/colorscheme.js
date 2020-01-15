@@ -12,9 +12,11 @@ const grass = {
 }
 
 const pitchFork = {
-    background: "#E94633",
+    // background: "#E94633",
+    background: "#FEF49C",
     text: "#000000",
-    highlight: "#ECE8DC",
+    // highlight: "#ECE8DC",
+    highlight: "#4c8c8c",
     secondary: "#7EA7D2",
     tertiary: "#58BC71"
 }

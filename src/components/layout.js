@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import layoutStyles from "./layout.module.css"
-import { AnimationExample, PointerInteraction } from "../components/index-art"
 import { Blobs } from "../components/bg-art"
 import ColorScheme from "../utils/colorscheme"
 // import { Sidebar } from "../components/sidebar"
@@ -20,6 +19,9 @@ const Sidebar = () => (
       </Link>
       <ul style={{ listStyle: `none` }}>
         <ListLink to="/about/">About</ListLink>
+        <ListLink to="/bananas/">Bananas</ListLink>
+        <ListLink to="/school-time/">School Time</ListLink>
+        <ListLink to="/the-hospital/">The Hospital</ListLink>
       </ul>
     </header>
   </div>
@@ -30,10 +32,12 @@ let mousePos = {
   y: 800,
 }
 
+if (typeof window !== `undefined`) {
 document.documentElement.onmousemove = function(e) {
   mousePos.x = e.clientX
   mousePos.y = e.clientY
-  // console.log(`x: ${mousePos.x}, y: ${mousePos.y}`)
+  console.log(`x: ${mousePos.x}, y: ${mousePos.y}`)
+}
 }
 
 export default ({ children }) => (
@@ -49,8 +53,7 @@ export default ({ children }) => (
         left: 0,
         zIndex: -100,
         width: `100%`,
-        height: `100%`,
-        background: `blue`,
+        height: `100%`
       }}
     >
       <Blobs
