@@ -18,7 +18,8 @@ const pitchFork = {
     // highlight: "#ECE8DC",
     highlight: "#4c8c8c",
     secondary: "#7EA7D2",
-    tertiary: "#58BC71"
+    tertiary: "#58BC71",
+    sidebarText: "#FFF0A5"
 }
 
 export { pitchFork as default }

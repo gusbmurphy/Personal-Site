@@ -10,7 +10,7 @@ import ColorScheme from "./colorscheme"
 
 GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   html: {
-    background: `${ColorScheme.background}`,
+    background: ColorScheme.background
   },
   h1: {
     fontFamily: "Heebo, sans-serif",
@@ -18,28 +18,39 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     borderBottom: "solid 1px black",
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(3 / 4),
-    marginTop: rhythm(1.5),
+    marginTop: rhythm(1.5)
   },
   h2: {
     borderBottom: "none",
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(1 / 4),
-    marginTop: rhythm(1),
+    marginTop: rhythm(1)
   },
   h6: {
-    color: `${ColorScheme.text}`,
+    color: ColorScheme.text
   },
   a: {
-    color: `${ColorScheme.highlight}`,
+    color: ColorScheme.highlight,
     textDecoration: "underline",
   },
   "a:hover,a:active": {
     color: "blue",
     textDecoration: "underline",
   },
-  "a h1": {
-    color: `${ColorScheme.text}`
-  }
+  // ".sidebar a": {
+  //   color: ColorScheme.sidebarText
+  // },
+  // "sidebar h1 a:hover, sidebar h1 a:active": {
+  //   color: ColorScheme.sidebarText,
+  //   textDecoration: "none",
+  // },
+  // ".sidebar ul a": {
+  //   color: ColorScheme.sidebarText
+  // },
+  // ".sidebar h1": {
+  //   color: ColorScheme.sidebarText,
+  //   borderBottom: `solid 1px ${ColorScheme.sidebarText}`
+  // }
 })
 GithubTheme.bodyColor = ColorScheme.text
 const typography = new Typography(GithubTheme)

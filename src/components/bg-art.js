@@ -17,7 +17,7 @@ let showWidgets = false;
 
 // TODO: Make it so that when resizing the window, the animation is not "redrawn". Not sure how to do this!
 
-export class Blobs extends PtsCanvas {
+class Blobs extends PtsCanvas {
   constructor() {
     super()
     this.follower = new Pt()
@@ -121,3 +121,5 @@ export class Blobs extends PtsCanvas {
     }
   }
 }
+
+export { Blobs as default }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import layoutStyles from "./layout.module.css"
-import { Blobs } from "../components/bg-art"
+// import Art from "../components/bg-art"
 import ColorScheme from "../utils/colorscheme"
 // import { Sidebar } from "../components/sidebar"
 
@@ -33,11 +33,10 @@ let mousePos = {
 }
 
 if (typeof window !== `undefined`) {
-document.documentElement.onmousemove = function(e) {
-  mousePos.x = e.clientX
-  mousePos.y = e.clientY
-  console.log(`x: ${mousePos.x}, y: ${mousePos.y}`)
-}
+  document.documentElement.onmousemove = function(e) {
+    mousePos.x = e.clientX
+    mousePos.y = e.clientY
+  }
 }
 
 export default ({ children }) => (
@@ -53,16 +52,16 @@ export default ({ children }) => (
         left: 0,
         zIndex: -100,
         width: `100%`,
-        height: `100%`
+        height: `100%`,
       }}
     >
-      <Blobs
+      {/* <Art
         name="pts_anim"
-        background={ ColorScheme.background }
+        background={ColorScheme.background}
         pause="false"
         style={{ height: "100%" }}
         mousePos={mousePos}
-      />
+      /> */}
     </div>
   </div>
 )

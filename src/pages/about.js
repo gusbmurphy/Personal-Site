@@ -1,9 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
 import Text from "../components/text"
 
 export default () => (
-    // <Layout>
       <Text>
         <div>
           <h1>Lorem Ipsum</h1>
