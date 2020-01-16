@@ -1,5 +1,12 @@
 module.exports = {
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/blog`,
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-typography`,
@@ -12,6 +19,7 @@ module.exports = {
       options: {
         component: require.resolve(`./src/components/layout.js`),
       },
-    }
+    },
+    `gatsby-transformer-remark`
   ],
 }

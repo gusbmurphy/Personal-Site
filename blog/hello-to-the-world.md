@@ -1,5 +1,5 @@
 ---
-path: hello-world
+path: /hello-world
 date: 2020-01-16T21:28:13.019Z
 title: Hello to the World
 ---
