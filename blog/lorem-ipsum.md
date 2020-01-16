@@ -1,5 +1,5 @@
 ---
-path: '/test2 '
+path: /test2
 date: 2020-01-16T22:16:43.910Z
 title: Lorem Ipsum
 ---
