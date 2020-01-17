@@ -9,6 +9,9 @@ collections:
   - name: tags
     label: Tags
     widget: "list"
+    create: true
+    fields:
+      - { name: title, label: Title }
   - name: writing
     label: Writing
     folder: writing
