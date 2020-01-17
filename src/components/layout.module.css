@@ -6,7 +6,6 @@
   position: fixed;
   top: 0;
   z-index: 1;
-  
 }
 .sidebar a {
   color: red;
@@ -22,7 +21,6 @@
 .sidebar ul a:hover {
   color: blue;
 }
-
 .content {
   height: 100vh;
   padding-left: 16px;
@@ -30,9 +28,7 @@
 }
 .sidebar a h1 {
   color: red;
-  
 }
-
 .sidebar h1 {
-    border-bottom: solid 1px red;
+  border-bottom: solid 1px red;
 }

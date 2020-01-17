@@ -1,0 +1,17 @@
+.postContainer {
+}
+
+.post {
+}
+
+.meta {
+  float: right;
+}
+
+.tag {
+  margin-left: 0.5em;
+  padding: 0.1em;
+  font-size: smaller;
+  text-transform: uppercase;
+  border: solid 1px black;
+}

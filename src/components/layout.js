@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import layoutStyles from "./layout.module.css"
+import styles from "./layout.module.css"
 // import Art from "../components/bg-art"
 import ColorScheme from "../utils/colorscheme"
 // import { Sidebar } from "../components/sidebar"
@@ -12,12 +12,13 @@ const ListLink = props => (
 )
 
 const Sidebar = () => (
-  <div className={layoutStyles.sidebar}>
+  <div className={styles.sidebar}>
     <header>
       <Link to="/">
         <h1>Gus Murphy</h1>
       </Link>
       <ul style={{ listStyle: `none` }}>
+        <ListLink to="/writings/">Writings</ListLink>
         <ListLink to="/about/">About</ListLink>
         <ListLink to="/bananas/">Bananas</ListLink>
         <ListLink to="/school-time/">School Time</ListLink>
@@ -43,7 +44,7 @@ export default ({ children }) => (
   <div style={{ position: `relative`, width: `100%`, height: `100%` }}>
     <div style={{ margin: `auto`, maxWidth: 800, zIndex: 100 }}>
       <Sidebar />
-      <div className={layoutStyles.content}>{children}</div>
+      <div className={styles.content}>{children}</div>
     </div>
     <div
       style={{
