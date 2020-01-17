@@ -6,6 +6,9 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - name: tags
+    label: Tags
+    widget: "list"
   - name: writing
     label: Writing
     folder: writing
