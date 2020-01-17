@@ -6,6 +6,15 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - name: writing
+    label: Writing
+    folder: writing
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
   - name: blog
     label: Blog
     folder: blog
