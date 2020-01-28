@@ -1,30 +1,37 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from "./layout.module.css"
-// import Art from "../components/bg-art"
+import Art from "../components/bg-art"
 import ColorScheme from "../utils/colorscheme"
-// import { Sidebar } from "../components/sidebar"
+// import Sidebar from "./sidebar"
 
 const ListLink = props => (
   <li>
-    <Link to={props.to}>{props.children}</Link>
+    <Link to={props.to} className={styles.hvrSweepToLeft}>{props.children}</Link>
   </li>
 )
 
 const Sidebar = () => (
   <div className={styles.sidebar}>
-    <header>
-      <Link to="/">
-        <h1>Gus Murphy</h1>
-      </Link>
-      <ul style={{ listStyle: `none` }}>
-        <ListLink to="/writings/">Writings</ListLink>
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/bananas/">Bananas</ListLink>
-        <ListLink to="/school-time/">School Time</ListLink>
-        <ListLink to="/the-hospital/">The Hospital</ListLink>
-      </ul>
-    </header>
+    
+      <div className={styles.imprintContainer}>
+        <div className={styles.imprint}>
+        <Link to="/">
+          <p className={styles.imprintFirstName}>Gus</p>
+          <p className={styles.imprintLastName}>Murphy</p>
+        </Link>
+        </div>
+      </div>
+      <div className={styles.links}>
+        <ul>
+          <ListLink to="/writings/">Writings</ListLink>
+          <ListLink to="/about/">About</ListLink>
+          <ListLink to="/bananas/">Bananas</ListLink>
+          <ListLink to="/school-time/">School Time</ListLink>
+          <ListLink to="/the-hospital/">The Hospital</ListLink>
+        </ul>
+      </div>
+    
   </div>
 )
 
@@ -42,10 +49,12 @@ if (typeof window !== `undefined`) {
 
 export default ({ children }) => (
   <div style={{ position: `relative`, width: `100%`, height: `100%` }}>
-    <div style={{ margin: `auto`, maxWidth: 800, zIndex: 100 }}>
+    <div>
       <Sidebar />
+      {/* <div className={styles.topBar}><p>Writings</p></div> */}
       <div className={styles.content}>{children}</div>
     </div>
+    {/* This div is styled here for the background art. */}
     <div
       style={{
         position: `fixed`,
@@ -56,13 +65,13 @@ export default ({ children }) => (
         height: `100%`,
       }}
     >
-      {/* <Art
+      <Art
         name="pts_anim"
         background={ColorScheme.background}
         pause="false"
         style={{ height: "100%" }}
         mousePos={mousePos}
-      /> */}
+      />
     </div>
   </div>
 )

@@ -13,13 +13,18 @@ const grass = {
 
 const pitchFork = {
     // background: "#E94633",
-    background: "#FEF49C",
-    text: "#000000",
+    // background: "#86CFB2", // mint green
+    background: "#82A7D1", // terry blue
+    // background: "white",
+    text: "black",
+    // text: "#000000",
     // highlight: "#ECE8DC",
     highlight: "#4c8c8c",
-    secondary: "#7EA7D2",
-    tertiary: "#58BC71",
+    secondary: "#62BC7C", // green
+    tertiary: "#EA483B", // red
+    red: "#E94633",
     sidebarText: "#FFF0A5"
+    
 }
 
 export { pitchFork as default }

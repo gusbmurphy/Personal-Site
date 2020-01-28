@@ -13,9 +13,9 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     background: ColorScheme.background
   },
   h1: {
-    fontFamily: "Heebo, sans-serif",
+    // fontFamily: "Heebo, sans-serif",
     fontWeight: 1000,
-    borderBottom: "solid 1px black",
+    borderBottom: `solid 1px ${ColorScheme.text}`,
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(3 / 4),
     marginTop: rhythm(1.5)

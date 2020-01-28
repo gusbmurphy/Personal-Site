@@ -3,6 +3,6 @@ import Text from "../components/text"
 
 export default () => (
   <Text>
-    <p>This is truly the index.</p>
+    <h1>This is truly the index.</h1>
   </Text>
 )
