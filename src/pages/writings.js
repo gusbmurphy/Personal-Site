@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 const PostLink = ({ post }) => {
-  console.log(`"tag" class name in 'post-link.js': ${styles.tag}`)
   let tags = post.frontmatter.tags.map(tag => (
     <span className={styles.tag} key={tag}>
       {tag}

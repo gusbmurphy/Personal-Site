@@ -8,7 +8,7 @@ public_folder: assets
 collections:
   - name: writing
     label: Writing
-    folder: writing
+    folder: _content/writing
     create: true
     fields:
       - { name: path, label: Path }
@@ -18,10 +18,12 @@ collections:
       - { name: body, label: Body, widget: markdown }
   - name: work
     label: Work
-    folder: work
+    folder: _content/work
     create: true
     fields:
       - { name: path, label: Path }
+      - { name: date, label: Date, widget: date, dateFormat: "MM.YYYY" }
+      - { name: title, label: Title }
       - { name: tags, label: Tags, widget: "list" }
       - { name: shortDesc, label: Short Description, widget: "string" }
       - { name: description, label: Full Description, widget: "text" }

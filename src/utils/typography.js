@@ -1,6 +1,7 @@
 import Typography from "typography"
 import GithubTheme from "typography-theme-github"
 import ColorScheme from "./colorscheme"
+import { withAssetPrefix } from "gatsby"
 
 // const ColorScheme = {
 //   background: "#FEF49C",
@@ -13,9 +14,11 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     background: ColorScheme.background
   },
   h1: {
-    // fontFamily: "Heebo, sans-serif",
-    fontWeight: 1000,
-    borderBottom: `solid 1px ${ColorScheme.text}`,
+    fontFamily: "Heebo, sans-serif",
+    fontSize: `3.6em`,
+    fontWeight: 700,
+    // color: `white`,
+    borderBottom: `none`,
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(3 / 4),
     marginTop: rhythm(1.5)
@@ -24,13 +27,17 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     borderBottom: "none",
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(1 / 4),
-    marginTop: rhythm(1)
+    marginTop: rhythm(1),
+    color: `white`
   },
-  h6: {
-    color: ColorScheme.text
+  "h1,h2,h3,h4,h5,h6": {
+    color: `white`
   },
+  // h6: {
+  //   color: `white`
+  // },
   a: {
-    color: ColorScheme.highlight,
+    color: `white`,
     textDecoration: "underline",
   },
   "a:hover,a:active": {
