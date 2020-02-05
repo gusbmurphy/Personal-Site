@@ -43,7 +43,10 @@ export default ({
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {fileAbsolutePath: {regex: "/content/writing/.*\\\\.md$/"}}
+    ) {
       edges {
         node {
           id

@@ -3,8 +3,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/content/writing`,
+        name: `content`,
+        path: `${__dirname}/content/`,
       },
     },
     `gatsby-plugin-netlify-cms`,
