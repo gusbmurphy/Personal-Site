@@ -1,5 +1,4 @@
 ---
-path: /apex
 date: 2015-05-31T17:44:11.770Z
 title: Proin
 tags:
@@ -44,5 +43,6 @@ description: >-
   fermentum. Donec suscipit nisl at odio blandit, sit amet hendrerit lorem
   egestas.
 previewImage: assets/giphy.gif
+templateKey: work
 ---
 

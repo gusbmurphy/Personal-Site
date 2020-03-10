@@ -9,7 +9,7 @@ const PostLink = ({ post }) => {
   ))
   return (
     <div>
-      <Link to={post.frontmatter.path}>
+      <Link to={post.path}>
         {post.frontmatter.title} ({post.frontmatter.date})
       </Link>
       {tags}

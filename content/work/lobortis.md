@@ -1,5 +1,4 @@
 ---
-path: /app
 date: 2022-07-31T17:48:30.612Z
 title: Lobortis
 tags:
@@ -73,5 +72,6 @@ description: >-
   Suspendisse tincidunt eleifend turpis gravida aliquet. Etiam efficitur lorem
   sit amet suscipit faucibus.
 previewImage: assets/giphy-3.gif
+templateKey: work
 ---
 

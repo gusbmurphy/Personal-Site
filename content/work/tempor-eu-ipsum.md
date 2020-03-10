@@ -1,5 +1,4 @@
 ---
-path: /sonic
 date: 2019-07-01T17:46:23.411Z
 title: Tempor Eu Ipsum
 tags:
@@ -81,5 +80,6 @@ description: >-
   vehicula tincidunt. Sed et est vel risus consequat porttitor sed non sapien.
   Fusce vel lectus placerat tortor ornare convallis.
 previewImage: assets/giphy-1.gif
+templateKey: work
 ---
 

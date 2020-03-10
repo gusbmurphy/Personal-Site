@@ -30,13 +30,28 @@ export default function Template({
   )
 }
 
+// export const pageQuery = graphql`
+//   query($path: String!) {
+//     markdownRemark(frontmatter: { path: { eq: $path } }) {
+//       html
+//       frontmatter {
+//         date(formatString: "MMMM DD, YYYY")
+//         title
+//         tags
+//       }
+//     }
+//   }
+// `
+
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query WritingByID($slug: String!) {
+    markdownRemark(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { templateKey: { eq: "writing" } }
+    ) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
         title
         tags
       }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from "./layout.module.css"
-// import Art from "../components/bg-art"
+import Art from "../components/bg-art"
 import ColorScheme from "../utils/colorscheme"
 // import Sidebar from "./sidebar"
 
@@ -25,6 +25,7 @@ const Sidebar = () => (
     {/* </div> */}
     <div className={styles.links}>
       <ul>
+      <ListLink to="/work/">Work</ListLink>
         <ListLink to="/writings/">Writings</ListLink>
         <ListLink to="/about/">About</ListLink>
         <ListLink to="/bananas/">Bananas</ListLink>
@@ -71,13 +72,13 @@ class Layout extends React.Component {
             height: `100%`,
           }}
         >
-          {/* <Art
+          <Art
             name="pts_anim"
             background={ColorScheme.background}
             pause="false"
             style={{ height: "100%" }}
             mousePos={mousePos}
-          /> */}
+          />
         </div>
       </div>
     )

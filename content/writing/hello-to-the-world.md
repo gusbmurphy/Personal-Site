@@ -1,10 +1,10 @@
 ---
-path: /hello-world
 date: 2020-01-16T21:28:13.019Z
 title: Hello to the World
 tags:
     - Red
     - Blue
+templateKey: writing
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum, lectus a eleifend egestas, quam nibh pretium urna, at lacinia augue augue ac ipsum. Nam condimentum et orci id semper. Maecenas vel velit sed sem euismod imperdiet. Phasellus tincidunt tincidunt sem, sed euismod turpis pellentesque eget. Phasellus lobortis, ligula ut convallis vehicula, orci diam ultricies purus, vitae consequat tortor leo id ligula. Fusce sodales tincidunt tellus, a mollis magna molestie vitae. Donec condimentum condimentum ante sed aliquam. In vestibulum orci at hendrerit finibus. Suspendisse rhoncus, dui ut vestibulum maximus, leo sem feugiat magna, sed sollicitudin ante velit vitae sem. Nulla elementum vitae lacus non luctus. Cras id orci lobortis, volutpat odio ac, facilisis nisl. Proin placerat eget sapien vitae egestas. Sed blandit ante ac varius semper.
 

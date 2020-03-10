@@ -21,24 +21,37 @@ export default function Template({
             </h4>
           </h1>
         </div>
-        <div
-          className={styles.content}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div className={styles.content}>{frontmatter.description}</div>
       </div>
     </div>
   )
 }
 
+// export const pageQuery = graphql`
+//   query($path: String!) {
+//     markdownRemark(frontmatter: { path: { eq: $path } }) {
+//       html
+//       frontmatter {
+//         date(formatString: "MMMM DD, YYYY")
+//         title
+//         tags
+//       }
+//     }
+//   }
+// `
+
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query WorkByID($slug: String!) {
+    markdownRemark(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { templateKey: { eq: "work" } }
+    ) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
         title
         tags
+        description
       }
     }
   }

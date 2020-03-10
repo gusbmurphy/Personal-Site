@@ -1,9 +1,9 @@
 ---
-path: /test2
 date: 2020-01-16T22:16:43.910Z
 title: Lorem Ipsum
 tags:
     - Blue
+templateKey: writing
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida mattis nisi sed eleifend. Phasellus urna ante, dignissim eu finibus a, aliquet quis neque. Morbi fringilla risus at blandit tempus. Mauris pellentesque consequat tortor sit amet elementum. In ac cursus turpis. Sed tincidunt, ipsum eget congue elementum, tortor orci aliquet risus, ac fermentum leo lectus eget arcu. Nam nec iaculis ipsum. Proin nisi ante, luctus in elit sit amet, blandit varius sapien. Curabitur non gravida metus. Nam interdum nisl sed metus interdum, ac vehicula arcu lacinia. Sed cursus efficitur semper. Aenean ultricies eros metus, dapibus lacinia ipsum mollis nec.
 

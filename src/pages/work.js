@@ -1,6 +1,6 @@
 import React from "react"
 // import Text from "../components/text"
-import styles from "./writings.module.css"
+import styles from "./work.module.css"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
@@ -13,10 +13,13 @@ const WorkLink = ({ post }) => {
   return (
     <div>
       <li>
-        <Link to={post.frontmatter.path}>
+        <Link to={post.fields.slug}>
           {post.frontmatter.title} ({post.frontmatter.date})
         </Link>
         {tags}
+        <p className={styles.description}>
+          {post.frontmatter.shortDesc}
+        </p>
       </li>
     </div>
   )
@@ -36,7 +39,7 @@ export default ({
   return (
     <div>
       <h1>Work</h1>
-      <ul>{Works}</ul>
+      <ul className={styles.workList}>{Works}</ul>
     </div>
   )
 }
@@ -51,10 +54,13 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 250)
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "MMMM, YYYY")
-            path
             title
+            shortDesc
             tags
           }
         }

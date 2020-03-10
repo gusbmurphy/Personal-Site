@@ -1,9 +1,9 @@
 ---
-path: /test1
 date: 2020-01-16T22:15:59.881Z
 title: Donec
 tags:
     - Red
+templateKey: writing
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere quis ante eget sodales. Proin felis orci, lobortis et aliquam vel, lacinia sit amet leo. Etiam eu libero a elit consequat aliquet. Donec ac laoreet est, in commodo nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam et urna tortor. Pellentesque semper nisi eu purus mattis, ut scelerisque eros varius. Sed a mollis eros. Sed porta imperdiet ex, vitae mattis odio aliquam in. Sed in lacinia nisl. Fusce sit amet mattis velit, eget facilisis lectus.
 

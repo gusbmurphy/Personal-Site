@@ -13,7 +13,7 @@ const PostLink = ({ post }) => {
   return (
     <div>
       <li>
-        <Link to={post.frontmatter.path}>
+        <Link to={post.fields.slug}>
           {post.frontmatter.title} ({post.frontmatter.date})
         </Link>
         {tags}
@@ -36,7 +36,7 @@ export default ({
   return (
     <div>
       <h1>Writings</h1>
-      <ul>{Posts}</ul>
+      <ul className={styles.postsList}>{Posts}</ul>
     </div>
   )
 }
@@ -51,9 +51,11 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 250)
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            path
             title
             tags
           }
