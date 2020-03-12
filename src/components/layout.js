@@ -1,13 +1,14 @@
-import React, { Suspense } from "react"
+import React from "react"
 import { Link } from "gatsby"
 
 import styles from "./layout.module.css"
 import ColorScheme from "../utils/colorscheme"
 
 import ReactDynamicComponent from "react-dynamic-import"
+
 const artLoader = () => import("./bg-art")
 const Art = ReactDynamicComponent({
-  loader: artLoader
+  loader: artLoader,
 })
 
 const ListLink = props => (
@@ -66,14 +67,12 @@ class Layout extends React.Component {
             height: `100%`,
           }}
         >
-          <Suspense fallback={null}>
-            <Art
-              name="pts_anim"
-              background={ColorScheme.background}
-              pause="false"
-              style={{ height: "100%" }}
-            />
-          </Suspense>
+          <Art
+            name="pts_anim"
+            background={ColorScheme.background}
+            pause="false"
+            style={{ height: "100%" }}
+          />
         </div>
       </div>
     )
