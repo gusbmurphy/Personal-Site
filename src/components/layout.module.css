@@ -37,6 +37,41 @@
   flex-direction: column;
 }
 
+.imprintContainer {
+  display: table;
+  /* height: calc(var(--sidebar-width) * 0.75); */
+}
+
+.imprint {
+  /* display: table-cell; */
+  /* vertical-align: middle; */
+  /* transform: skew(10deg) rotate(-10deg) translateY(-5%); */
+  font-family: 'Dosis', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 48px;
+  text-align: left;
+  /* vertical-align: center; */
+}
+.imprint a {
+  color: var(--sidebar-color);
+  text-decoration: none;
+}
+.imprint p {
+  margin-bottom: 0;
+}
+
+.imprintFirstName {
+  /* transform: translateY(25%); */
+}
+
+.imprintLastName {
+  transform: translateY(-45%);
+}
+
+.links {
+}
+
 .links ul {
   list-style: none;
   text-align: left;

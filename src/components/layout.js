@@ -4,7 +4,11 @@ import { Link } from "gatsby"
 import styles from "./layout.module.css"
 import ColorScheme from "../utils/colorscheme"
 
-const Art = React.lazy(() => import("./bg-art")) 
+import ReactDynamicComponent from "react-dynamic-import"
+const artLoader = () => import("./bg-art")
+const Art = ReactDynamicComponent({
+  loader: artLoader
+})
 
 const ListLink = props => (
   <li>
