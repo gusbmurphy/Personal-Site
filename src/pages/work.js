@@ -4,42 +4,37 @@ import styles from "./work.module.css"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-const WorkLink = ({ post }) => {
+const WorkItem = ({ post }) => {
   let tags = post.frontmatter.tags.map(tag => (
     <span className={styles.tag} key={tag}>
       {tag}
     </span>
   ))
   return (
-    <div>
-      <li>
-        <Link to={post.fields.slug}>
-          {post.frontmatter.title} ({post.frontmatter.date})
-        </Link>
-        {tags}
-        <p className={styles.description}>
-          {post.frontmatter.shortDesc}
-        </p>
-      </li>
+    <div className={styles.workGridItem}>
+      <Link to={post.fields.slug}><img src={`../../${post.frontmatter.previewImage}`}/></Link>
+      <div className={styles.title}>
+        <Link to={post.fields.slug}>{post.frontmatter.title}</Link> (
+        {post.frontmatter.date})
+      </div>
+      <div className={styles.tagsCollection}>{tags}</div>
+      <p className={styles.description}>{post.frontmatter.shortDesc}</p>
     </div>
   )
 }
 
 export default ({
   data: {
-    allMarkdownRemark: { edges },
+    allMarkdownRemark: { edges: allMarkdown }
   },
 }) => {
-  edges.forEach(edge => {
-    console.log(edge.node.frontmatter.tags)
-  })
-  const Works = edges
-    // .filter(edge => edge.node.frontmatter.tags.contains("Red"))
-    .map(edge => <WorkLink key={edge.node.id} post={edge.node} />)
+  const Works = allMarkdown.map(markdown => (
+    <WorkItem key={markdown.node.id} post={markdown.node} />
+  ))
   return (
     <div>
       <h1>Work</h1>
-      <ul className={styles.workList}>{Works}</ul>
+      <div className={styles.workGrid}>{Works}</div>
     </div>
   )
 }
@@ -47,9 +42,9 @@ export default ({
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: {fileAbsolutePath: {regex: "/content/work/.*\\\\.md$/"}}
-        ) {
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { fileAbsolutePath: { regex: "/content/work/.*\\\\.md$/" } }
+    ) {
       edges {
         node {
           id
@@ -62,6 +57,7 @@ export const pageQuery = graphql`
             title
             shortDesc
             tags
+            previewImage
           }
         }
       }

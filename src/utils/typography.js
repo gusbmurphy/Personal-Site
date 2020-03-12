@@ -43,21 +43,7 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   "a:hover,a:active": {
     color: "blue",
     textDecoration: "underline",
-  },
-  // ".sidebar a": {
-  //   color: ColorScheme.sidebarText
-  // },
-  // "sidebar h1 a:hover, sidebar h1 a:active": {
-  //   color: ColorScheme.sidebarText,
-  //   textDecoration: "none",
-  // },
-  // ".sidebar ul a": {
-  //   color: ColorScheme.sidebarText
-  // },
-  // ".sidebar h1": {
-  //   color: ColorScheme.sidebarText,
-  //   borderBottom: `solid 1px ${ColorScheme.sidebarText}`
-  // }
+  }
 })
 GithubTheme.bodyColor = ColorScheme.text
 const typography = new Typography(GithubTheme)

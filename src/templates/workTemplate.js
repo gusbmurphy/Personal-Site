@@ -14,31 +14,17 @@ export default function Template({
     <div className={styles.postContainer}>
       <div className={styles.post}>
         <div className={styles.header}>
-          <h1 className={styles.title}>
-            {frontmatter.title}
-            <h4 className={styles.meta}>
-              {frontmatter.date} {tags}
-            </h4>
-          </h1>
+        <h1 className={styles.title}>{frontmatter.title}</h1>
+          <h4 className={styles.meta}>
+            {frontmatter.date} {tags}
+          </h4>
         </div>
+  <div className={styles.previewImage}><img src={`../../${frontmatter.previewImage}`}/></div>
         <div className={styles.content}>{frontmatter.description}</div>
       </div>
     </div>
   )
 }
-
-// export const pageQuery = graphql`
-//   query($path: String!) {
-//     markdownRemark(frontmatter: { path: { eq: $path } }) {
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         title
-//         tags
-//       }
-//     }
-//   }
-// `
 
 export const pageQuery = graphql`
   query WorkByID($slug: String!) {
@@ -52,6 +38,7 @@ export const pageQuery = graphql`
         title
         tags
         description
+        previewImage
       }
     }
   }

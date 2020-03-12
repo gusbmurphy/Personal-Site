@@ -31,7 +31,6 @@ export default ({
     console.log(edge.node.frontmatter.tags)
   })
   const Posts = edges
-    // .filter(edge => edge.node.frontmatter.tags.contains("Red"))
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
   return (
     <div>

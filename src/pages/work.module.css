@@ -1,21 +1,26 @@
-.postContainer {
-}
-
-.post {
-}
-
 .title {
-  margin-bottom: 0;
-  font-size: 3.6em;
+  color: white;
+}
+
+.tagsCollection {
 }
 
 .description {
 
 }
 
-.workList {
-  list-style: none;
-  margin-left: 0;
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+
+.workGridItem {
+
+}
+
+.workGridItem img {
+  margin-bottom: 0;
 }
 
 .meta {
@@ -24,7 +29,7 @@
 }
 
 .tag {
-  margin-left: 0.5em;
+  margin-right: 0.5em;
   padding: 0.1em;
   font-size: smaller;
   text-transform: uppercase;

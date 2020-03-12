@@ -9,11 +9,10 @@
 }
 
 .content {
-  height: 100vh;
   max-width: 800px;
   min-width: 550px;
   margin: 0 auto;
-  margin-bottom: 200px;
+  margin-bottom: 120px;
 }
 
 @media only screen and (max-width: 1260px) {
@@ -38,45 +37,6 @@
   flex-direction: column;
 }
 
-.imprintContainer {
-  display: table;
-  /* height: calc(var(--sidebar-width) * 0.75); */
-}
-
-.imprint {
-  /* display: table-cell; */
-  /* vertical-align: middle; */
-  /* transform: skew(10deg) rotate(-10deg) translateY(-5%); */
-  font-family: 'Dosis', sans-serif;
-  font-weight: 100;
-  text-transform: uppercase;
-  font-size: 48px;
-  text-align: left;
-  /* vertical-align: center; */
-}
-.imprint a {
-  color: var(--sidebar-color);
-  text-decoration: none;
-}
-.imprint p {
-  margin-bottom: 0;
-  /* -webkit-text-stroke: 2px var(--sidebar-color);
-  text-shadow: -0.5px 0.5px var(--sidebar-color);
-  text-shadow: -1px 1px var(--sidebar-color);
-  text-shadow: -1.5px 1.5px var(--sidebar-color);
-  text-shadow: -2px 2px var(--sidebar-color); */
-}
-
-.imprintFirstName {
-  /* transform: translateY(25%); */
-}
-
-.imprintLastName {
-  transform: translateY(-45%);
-}
-
-.links {
-}
 .links ul {
   list-style: none;
   text-align: left;
@@ -128,35 +88,3 @@
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
-
-/* .sidebar a {
-  color: red;
-  text-decoration: none;
-}
-.sidebar ul {
-  float: left;
-}
-.sidebar ul a {
-  text-decoration: underline;
-}
-.sidebar ul a:hover {
-  color: blue;
-}
-.sidebar a h1 {
-  color: red;
-}
-.sidebar h1 {
-  border-bottom: solid 1px red;
-} */
-
-/* .topBar {
-  width: 100%;
-  height: 50px;
-  margin-left: 200px;
-  background-color: #E94633;
-}
-
-.topBar p {
-  color: var(--background-color);
-  font-size: 24px;
-} */

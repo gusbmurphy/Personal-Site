@@ -5,7 +5,7 @@ import styles from "../pages/writings.module.css"
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   let tags = frontmatter.tags.map(tag => (
     <span className={styles.tag}>{tag}</span>
@@ -14,12 +14,10 @@ export default function Template({
     <div className={styles.postContainer}>
       <div className={styles.post}>
         <div className={styles.header}>
-          <h1 className={styles.title}>
-            {frontmatter.title}
-            <h4 className={styles.meta}>
-              {frontmatter.date} {tags}
-            </h4>
-          </h1>
+          <h1 className={styles.title}>{frontmatter.title}</h1>
+          <h4 className={styles.meta}>
+            {frontmatter.date} {tags}
+          </h4>
         </div>
         <div
           className={styles.content}
@@ -29,19 +27,6 @@ export default function Template({
     </div>
   )
 }
-
-// export const pageQuery = graphql`
-//   query($path: String!) {
-//     markdownRemark(frontmatter: { path: { eq: $path } }) {
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         title
-//         tags
-//       }
-//     }
-//   }
-// `
 
 export const pageQuery = graphql`
   query WritingByID($slug: String!) {
