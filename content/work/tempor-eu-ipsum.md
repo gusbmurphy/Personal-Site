@@ -79,7 +79,6 @@ description: >-
   rutrum hendrerit. Ut vehicula diam in pretium dignissim. Praesent condimentum
   vehicula tincidunt. Sed et est vel risus consequat porttitor sed non sapien.
   Fusce vel lectus placerat tortor ornare convallis.
-previewImage: assets/giphy-1.gif
+previewImage: assets/2560px-pong_-28684491143-.jpg
 templateKey: work
 ---
-
