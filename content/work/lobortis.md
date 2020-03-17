@@ -71,7 +71,6 @@ description: >-
   eget ligula mollis, mattis rutrum tortor. Vivamus eget pellentesque purus.
   Suspendisse tincidunt eleifend turpis gravida aliquet. Etiam efficitur lorem
   sit amet suscipit faucibus.
-previewImage: assets/giphy-3.gif
+previewImage: assets/ss_d9c50bbcf6c7a29a673eb81ddabe65f7472d78df.1920x1080.jpg
 templateKey: work
 ---
-
