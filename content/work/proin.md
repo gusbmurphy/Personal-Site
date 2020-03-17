@@ -42,7 +42,6 @@ description: >-
   nec hendrerit felis interdum quis. Nullam aliquet urna non purus ultrices
   fermentum. Donec suscipit nisl at odio blandit, sit amet hendrerit lorem
   egestas.
-previewImage: assets/giphy.gif
+previewImage: assets/google-game-builder.jpg
 templateKey: work
 ---
-
