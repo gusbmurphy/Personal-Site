@@ -1,6 +1,6 @@
 import React from "react"
 import Text from "../components/text"
-import styles from "./writings.module.css"
+import styles from "../styles/writings.module.css"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 

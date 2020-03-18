@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styles from "../pages/writings.module.css"
+import styles from "../styles/writings.module.css"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.

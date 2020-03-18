@@ -1,10 +1,13 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
 
-import styles from "./layout.module.css"
+import styles from "../styles/layout.module.css"
 import ColorScheme from "../utils/colorscheme"
 
 import ReactDynamicComponent from "react-dynamic-import"
+
+import Media from "react-media"
+import Headroom from "react-headroom"
 
 const artLoader = () => import("./bg-art")
 const Art = ReactDynamicComponent({
@@ -19,14 +22,11 @@ const ListLink = props => (
   </li>
 )
 
-const Sidebar = () => (
-  <div className={styles.sidebar}>
-    <div className={styles.imprint}>
-      <Link to="/">
-        <p className={styles.imprintFirstName}>Gus</p>
-        <p className={styles.imprintLastName}>Murphy</p>
-      </Link>
-    </div>
+const Menu = () => (
+  <div className={styles.menu}>
+    <Link to="/">
+      <h1 className={styles.name}>Gus Murphy</h1>
+    </Link>
     <div className={styles.links}>
       <ul>
         <ListLink to="/work/">Work</ListLink>
@@ -40,6 +40,12 @@ const Sidebar = () => (
   </div>
 )
 
+const Topbar = () => (
+  <Headroom>
+    <h1>Hello from Headroom!</h1>
+  </Headroom>
+)
+
 class Layout extends React.Component {
   constructor(props) {
     super(props)
@@ -49,24 +55,33 @@ class Layout extends React.Component {
   }
 
   render() {
-    console.log("Hello from cDM!")
     return (
       <div style={{ position: `relative`, width: `100%`, height: `100%` }}>
-        <div>
-          <Sidebar />
+        <div className={styles.mainGrid}>
+          <Media
+            queries={{
+              small: "(max-width: 1099px)",
+              large: "(min-width: 1100px)",
+            }}
+          >
+            {matches => (
+              <Fragment>
+                {matches.small && (
+                  <Headroom
+                    style={{
+                      margin: "auto"
+                    }}
+                  >
+                    <Menu />
+                  </Headroom>
+                )}
+                {matches.large && <Menu />}
+              </Fragment>
+            )}
+          </Media>
           <div className={styles.content}>{this.props.children}</div>
         </div>
-        {/* This div is styled here for the background art. */}
-        <div
-          style={{
-            position: `fixed`,
-            top: 0,
-            left: 0,
-            zIndex: -100,
-            width: `100%`,
-            height: `100%`,
-          }}
-        >
+        <div className={styles.bgArt}>
           <Art
             name="pts_anim"
             background={ColorScheme.background}

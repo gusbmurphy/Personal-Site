@@ -31,18 +31,21 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     color: `white`
   },
   "h1,h2,h3,h4,h5,h6": {
-    color: `white`
+    color: `black`
   },
   // h6: {
   //   color: `white`
   // },
   a: {
-    color: `white`,
+    color: `black`,
     textDecoration: "underline",
   },
   "a:hover,a:active": {
     color: "blue",
     textDecoration: "underline",
+  },
+  "@media (max-width: 800px)": {
+
   }
 })
 GithubTheme.bodyColor = ColorScheme.text

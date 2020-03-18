@@ -1,0 +1,7 @@
+/* These styles are just for the Headroom component, but is there a better way than just using straight CSS? */
+.headroom {
+    width: 100%;
+    background-color: black;
+}
+/* .headroom--scrolled, .headroom--unpinned, .headroom--pinned {
+} */

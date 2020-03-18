@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styles from "../pages/writings.module.css"
+import styles from "../styles/writings.module.css"
 
 const PostLink = ({ post }) => {
   console.log(`"tag" class name in 'post-link.js': ${styles.tag}`)
