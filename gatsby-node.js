@@ -54,3 +54,40 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+// This is all added to try to avoid the "Date" error: "Error: Cannot create as TypeComposer the following value: Date."
+
+const resolvableExtensions = () => [`.ts`, `.tsx`]
+
+function onCreateBabelConfig({ actions }) {
+  actions.setBabelPreset({
+    name: `@babel/preset-typescript`,
+    options: {
+       isTSX: true,
+       allExtensions: true,
+    },
+  })
+}
+
+function onCreateWebpackConfig({ actions, loaders }) {
+  const jsLoader = loaders.js()
+
+  if (!jsLoader) {
+    return
+  }
+
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: jsLoader,
+        },
+      ],
+    },
+  })
+}
+
+exports.resolvableExtensions = resolvableExtensions
+exports.onCreateBabelConfig = onCreateBabelConfig
+exports.onCreateWebpackConfig = onCreateWebpackConfig

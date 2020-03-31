@@ -1,8 +1,17 @@
 import Typography from "typography"
 import GithubTheme from "typography-theme-github"
 import ColorScheme from "./colorscheme"
-import { withAssetPrefix } from "gatsby"
 
+import ReactDynamicComponent from "react-dynamic-import"
+
+if (typeof window !== "undefined") {
+  let WebFont = require("webfontloader")
+  WebFont.load({
+    typekit: {
+      id: `usw0zxa`,
+    },
+  })
+}
 // const ColorScheme = {
 //   background: "#FEF49C",
 //   text: "#000000",
@@ -11,27 +20,27 @@ import { withAssetPrefix } from "gatsby"
 
 GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   html: {
-    background: ColorScheme.background
+    background: ColorScheme.background,
   },
   h1: {
-    fontFamily: "Heebo, sans-serif",
     fontSize: `3.6em`,
-    fontWeight: 700,
+    fontWeight: 400,
     // color: `white`,
     borderBottom: `none`,
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(3 / 4),
-    marginTop: rhythm(1.5)
+    marginTop: rhythm(1.5),
   },
   h2: {
     borderBottom: "none",
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(1 / 4),
     marginTop: rhythm(1),
-    color: `white`
+    color: `white`,
   },
   "h1,h2,h3,h4,h5,h6": {
-    color: `black`
+    fontFamily: `ff-spinoza-web-pro, serif`,
+    color: `black`,
   },
   // h6: {
   //   color: `white`
@@ -44,9 +53,7 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     color: "blue",
     textDecoration: "underline",
   },
-  "@media (max-width: 800px)": {
-
-  }
+  "@media (max-width: 800px)": {},
 })
 GithubTheme.bodyColor = ColorScheme.text
 const typography = new Typography(GithubTheme)

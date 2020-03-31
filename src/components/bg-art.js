@@ -38,15 +38,16 @@ class Blobs extends PtsCanvas {
     if (typeof window !== `undefined`) {
       for (let i = 0; i < this.numOfBlobs; i++) {
         let blobMaxPoints, blobMinPoints, blobCenter, blobPoints, radius, tracks
-        let x = Math.floor(Math.random() * this.space.width)
+        // let x = Math.floor(Math.random() * this.space.width)
         let y = Math.floor(Math.random() * this.space.height)
+        let x = i < 1 ? this.space.width * 0.1 : this.space.width * 0.9
         blobCenter = new Pt([x, y])
 
-        radius = this.space.size.minValue().value / 2
+        radius = this.space.size.maxValue().value / 3
         blobMaxPoints = Create.radialPts(blobCenter, radius, 10)
         // Add some randomness to the points.
         blobMaxPoints = blobMaxPoints.map(p =>
-          p.add(40 * (Math.random() - Math.random()))
+          p.add((200 * (this.space.width / 1200)) * (Math.random() - Math.random()))
         )
         // Add "tracks" for the points to move on.
         tracks = blobMaxPoints.map(p => new Group(blobCenter, p))
@@ -58,7 +59,7 @@ class Blobs extends PtsCanvas {
           temp = track.clone()
           trackMag = Line.magnitude(track)
           // Generate a random modifier for the shorter vector.
-          modifier = Math.random() * (1 - maxMod) + maxMod
+          modifier = (Math.random() - Math.random()) * (1 - maxMod) + maxMod
           Geom.scale(temp, modifier, blobCenter)
           return temp[1]
         })

@@ -1,7 +1,7 @@
 import React from "react"
 // import Text from "../components/text"
 import styles from "../styles/work.module.css"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 import { graphql } from "gatsby"
 
 const WorkItem = ({ post }) => {
@@ -11,30 +11,28 @@ const WorkItem = ({ post }) => {
     </span>
   ))
   return (
-    <div className={styles.workGridItem}>
-      <Link to={post.fields.slug}><img src={`../../${post.frontmatter.previewImage}`}/></Link>
-      <div className={styles.title}>
-        <Link to={post.fields.slug}>{post.frontmatter.title}</Link> (
-        {post.frontmatter.date})
-      </div>
-      <div className={styles.tagsCollection}>{tags}</div>
-      <p className={styles.description}>{post.frontmatter.shortDesc}</p>
+    <div className={`${styles.workGridItem} ${styles.hvrGrowShadow}`}>
+      <Link to={post.fields.slug}>
+        <img src={`../../${post.frontmatter.previewImage}`} />
+        <div className={styles.workItemTransparency}></div>
+        <div className={styles.workTitle}>{post.frontmatter.title}</div>
+        <div className={styles.tagsCollection}>{tags}</div>
+      </Link>
     </div>
   )
 }
 
 export default ({
   data: {
-    allMarkdownRemark: { edges: allMarkdown }
+    allMarkdownRemark: { edges: allMarkdown },
   },
 }) => {
-  const Works = allMarkdown.map(markdown => (
+  const works = allMarkdown.map(markdown => (
     <WorkItem key={markdown.node.id} post={markdown.node} />
   ))
   return (
-    <div>
-      <h1>Work</h1>
-      <div className={styles.workGrid}>{Works}</div>
+    <div style={{textAlign: `center`}}>
+      <div className={styles.workGrid}>{works}</div>
     </div>
   )
 }

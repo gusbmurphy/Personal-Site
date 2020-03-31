@@ -2,39 +2,78 @@
   color: black;
 }
 
-.tagsCollection {
-}
-
-.description {
-
+.workContainer {
+  display: inline-block;
+  margin: auto;
 }
 
 .workGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 2rem;
+  display: inline-grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, minmax(200px, 300px));
+  grid-auto-rows: 300px;
+  grid-gap: 20px;
 }
 
 /* For smaller windows */
 @media (max-width: 899px) {
   .workGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(200px, 300px));
+    margin: auto;
   }
 }
 @media (max-width: 599px) {
   .workGrid {
-    grid-template-columns: 1fr;
+    grid-gap: 15px;
   }
 }
 
 .workGridItem {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: white;
+}
 
+.workTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.tagsCollection {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 20;
 }
 
 .workGridItem img {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.workItemTransparency {
+  height: 100%;
+  width: 100%;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0.35;
+}
+
+.workGridItem a {
+  color: white;
 }
 
 .meta {
@@ -43,14 +82,35 @@
 }
 
 .tag {
-  margin-right: 0.5em;
-  padding: 0.1em;
+  /* margin-right: 0.5em; */
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  padding: 0.15em;
   font-size: smaller;
   text-transform: uppercase;
-  background: black;
-  border: solid 1px black;
+  background: white;
+  border: solid 1px white;
   border-radius: 25%;
   color: #82A7D1;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+
+/* Thanks to Ian Lunn for working on this excellent animation from his Hover.css 
+(https://ianlunn.github.io/Hover/) project! */
+.hvrGrowShadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvrGrowShadow:hover, .hvrGrowShadow:focus, .hvrGrowShadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }

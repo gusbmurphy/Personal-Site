@@ -21,7 +21,8 @@ const pitchFork = {
     // text: "#000000",
     // highlight: "#ECE8DC",
     highlight: "#4c8c8c",
-    secondary: "#62BC7C", // green
+    // secondary: "#62BC7C", // green
+    secondary: "#82A7D1", // terry blue
     tertiary: "#EA483B", // red
     red: "#E94633"
     
