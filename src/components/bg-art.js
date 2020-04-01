@@ -40,7 +40,7 @@ class Blobs extends PtsCanvas {
         let blobMaxPoints, blobMinPoints, blobCenter, blobPoints, radius, tracks
         // let x = Math.floor(Math.random() * this.space.width)
         let y = Math.floor(Math.random() * this.space.height)
-        let x = i < 1 ? this.space.width * 0.1 : this.space.width * 0.9
+        let x = i < 1 ? this.space.width * 0.05 : this.space.width * 1.1
         blobCenter = new Pt([x, y])
 
         radius = this.space.size.maxValue().value / 3
@@ -78,7 +78,7 @@ class Blobs extends PtsCanvas {
   }
 
   animate(time, ftime) {
-    let t = Num.cycle((time % 14000) / 14000)
+    let t = Num.cycle((time % 25000) / 25000)
     for (let i = 0; i < this.numOfBlobs; i++) {
       let blob = this.blobs[i]
 
