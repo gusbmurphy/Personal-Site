@@ -21,6 +21,7 @@ if (typeof window !== "undefined") {
 GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
   html: {
     background: ColorScheme.background,
+    text: ColorScheme.text
   },
   h1: {
     fontSize: `3.6em`,
@@ -36,17 +37,17 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
     marginBottom: rhythm(1 / 4),
     marginTop: rhythm(1),
-    color: `white`,
+    color: ColorScheme.text,
   },
   "h1,h2,h3,h4,h5,h6": {
     fontFamily: `ff-spinoza-web-pro, serif`,
-    color: `black`,
+    color: ColorScheme.text,
   },
   // h6: {
   //   color: `white`
   // },
   a: {
-    color: `black`,
+    color: ColorScheme.text,
     textDecoration: "underline",
   },
   "a:hover,a:active": {

@@ -1,8 +1,8 @@
 import React from "react"
+import Img from "gatsby-image"
+import { graphql } from "gatsby"
 import Text from "../components/text"
 
 export default () => (
-  <Text>
-    <h1>This is truly the index.</h1>
-  </Text>
+    <h1 style={{ textAlign: `right`, marginTop: `33%`}}>&#8220;I <i>hate</i> being on <i>the computer</i>.&#8221;</h1>
 )

@@ -31,7 +31,10 @@ export default ({
     <WorkItem key={markdown.node.id} post={markdown.node} />
   ))
   return (
-    <div style={{textAlign: `center`}}>
+    <div style={{ textAlign: `center` }}>
+      <div className={styles.contentSummary}>
+        A collection of some (un)finished projects.
+      </div>
       <div className={styles.workGrid}>{works}</div>
     </div>
   )

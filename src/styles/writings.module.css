@@ -21,16 +21,16 @@
 }
 
 .tag {
-  margin-left: 0.5em;
-  padding: 0.1em;
-  font-size: smaller;
+  margin-left: 0.3em;
   text-transform: uppercase;
-  background: black;
-  border: solid 1px black;
-  border-radius: 25%;
-  color: #82A7D1;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  color: #F6F6F6;
+  background-color: #0009FF;
+}
+
+.contentSummary {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .previewImage {

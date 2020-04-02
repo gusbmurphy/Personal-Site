@@ -18,7 +18,7 @@ const pitchFork = {
     background: "#F6F6F6",
     // background: "#82A7D1", // terry blue
     // background: "white",
-    text: "black",
+    text: "#0009FF",
     // text: "#000000",
     // highlight: "#ECE8DC",
     highlight: "#4c8c8c",

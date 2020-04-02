@@ -114,3 +114,9 @@
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+.contentSummary {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
