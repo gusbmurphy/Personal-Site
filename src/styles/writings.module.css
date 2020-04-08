@@ -36,3 +36,9 @@
 .previewImage {
   
 }
+
+@media (max-width: 749px) {
+  .contentSummary {
+    font-size: small;
+  }
+}

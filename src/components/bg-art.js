@@ -6,7 +6,7 @@ import {
   Shaping,
   Curve,
   Geom,
-  Num
+  Num,
 } from "pts/dist/es5"
 
 import { PtsCanvas } from "react-pts-canvas"
@@ -15,13 +15,20 @@ import ColorScheme from "../utils/colorscheme"
 
 // TODO: Make it so that when resizing the window, the animation is not "redrawn". Not sure how to do this!
 
-class Blobs extends PtsCanvas {
+class Wave extends PtsCanvas {
   constructor() {
     super()
-    this.numOfBlobs = 2
-    this.blobs = []
-    this.pointAt = this.pointAt.bind(this)
+
     this.colors = [ColorScheme.secondary, ColorScheme.tertiary]
+
+    this.bottomLeft = null
+    this.bottomRight = null
+    this.curveStart = null
+    this.curveEnd = null
+
+    // "c1" and "c2" are the control points for the curve.
+    this.c1 = null
+    this.c2 = null
   }
 
   // Given a value, "t", between 0 and 1, return a point between the starting position and end position.
@@ -36,64 +43,35 @@ class Blobs extends PtsCanvas {
   // Override PtsCanvas' start function
   start(space, bound) {
     if (typeof window !== `undefined`) {
-      for (let i = 0; i < this.numOfBlobs; i++) {
-        let blobMaxPoints, blobMinPoints, blobCenter, blobPoints, radius, tracks
-        // let x = Math.floor(Math.random() * this.space.width)
-        let y = Math.floor(Math.random() * this.space.height)
-        let x = i < 1 ? this.space.width * 0.05 : this.space.width * 1.1
-        blobCenter = new Pt([x, y])
+      this.bottomLeft = new Pt([0, this.space.height])
+      this.bottomRight = new Pt([this.space.width, this.space.height])
+      this.curveStart = new Pt([0, this.space.height / 2])
+      this.curveEnd = new Pt([this.space.width, this.space.height / 2])
 
-        radius = this.space.size.maxValue().value / 3
-        blobMaxPoints = Create.radialPts(blobCenter, radius, 10)
-        // Add some randomness to the points.
-        blobMaxPoints = blobMaxPoints.map(p =>
-          p.add((200 * (this.space.width / 1200)) * (Math.random() - Math.random()))
-        )
-        // Add "tracks" for the points to move on.
-        tracks = blobMaxPoints.map(p => new Group(blobCenter, p))
+      this.c1 = new Pt([
+        this.space.width * 0.25,
+        this.space.height / 2 + this.space.height * 0.75,
+      ])
+      this.c2 = new Pt([this.space.width * 0.75, this.space.height * 0.75])
 
-        // Make the "blobMinPoints" randomly along each track, this is the minimum amount the points can move in to.
-        let maxMod = 0.9
-        let temp, modifier, trackMag, shortTrackEnd
-        blobMinPoints = tracks.map(track => {
-          temp = track.clone()
-          trackMag = Line.magnitude(track)
-          // Generate a random modifier for the shorter vector.
-          modifier = (Math.random() - Math.random()) * (1 - maxMod) + maxMod
-          Geom.scale(temp, modifier, blobCenter)
-          return temp[1]
-        })
-
-        blobPoints = blobMinPoints.clone()
-
-        this.blobs.push({
-          points: blobPoints,
-          minPoints: blobMinPoints,
-          maxPoints: blobMaxPoints,
-          center: blobCenter,
-          tracks: tracks,
-        })
-      }
+      this.bgCurve = Curve.cardinal([this.curveStart, this.c1, this.c2, this.curveEnd], 10)
     }
   }
 
   animate(time, ftime) {
-    let t = Num.cycle((time % 25000) / 25000)
-    for (let i = 0; i < this.numOfBlobs; i++) {
-      let blob = this.blobs[i]
+    let t = Num.cycle((time % 10000) / 10000)
 
-      let temp = new Group()
-      for (let i = 0; i < blob.minPoints.length; i++) {
-        temp.push(this.pointAt(t, blob.minPoints[i], blob.maxPoints[i]))
-      }
+    this.c1 = new Pt([
+      this.space.width * 0.25,
+      (this.space.height / 2) * -t + this.space.height * 0.75,
+    ])
+    this.c2 = new Pt([this.space.width * 0.75, this.space.height * 0.75 * t])
 
-      temp.push(temp.p1)
-      temp.push(temp.p2)
-      temp.push(temp.p3)
+    this.bgCurve.unshift(this.bottomLeft)
+    this.bgCurve.push(this.bottomRight)
 
-      this.form.fillOnly(this.colors[i]).line(Curve.bspline(temp, 10))
-    }
+    this.form.fillOnly("rgba(80,30,50,.8)").line(this.bgCurve)
   }
 }
 
-export { Blobs as default }
+export { Wave as default }

@@ -13,7 +13,7 @@ import Headroom from "react-headroom"
 
 import { FaCodepen, FaGithub, FaTwitter } from "react-icons/fa"
 
-const artLoader = () => import("./bg-art")
+const artLoader = () => import("./bg-art copy")
 const Art = ReactDynamicComponent({
   loader: artLoader,
 })
@@ -104,12 +104,12 @@ class Layout extends React.Component {
         </div>
         {/* </div> */}
         <div className={styles.bgArt}>
-          {/* <Art
+          <Art
             name="pts_anim"
             background={ColorScheme.background}
             pause="false"
             style={{ height: "100%" }}
-          /> */}
+          />
         </div>
       </div>
     )

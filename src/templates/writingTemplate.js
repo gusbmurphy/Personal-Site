@@ -15,9 +15,9 @@ export default function Template({
       <div className={styles.post}>
         <div className={styles.header}>
           <h1 className={styles.title}>{frontmatter.title}</h1>
-          <h4 className={styles.meta}>
+          <div className={styles.meta}>
             {frontmatter.date} {tags}
-          </h4>
+          </div>
         </div>
         <div
           className={styles.content}

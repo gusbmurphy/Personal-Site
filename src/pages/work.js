@@ -11,13 +11,15 @@ const WorkItem = ({ post }) => {
     </span>
   ))
   return (
-    <div className={`${styles.workGridItem} ${styles.hvrGrowShadow}`}>
-      <Link to={post.fields.slug}>
+    <div className={styles.workGridItem}>
+      <Link to={post.fields.slug} className={styles.workGridItemImg}>
         <img src={`../../${post.frontmatter.previewImage}`} />
-        <div className={styles.workItemTransparency}></div>
+      </Link>
+      <div className={styles.workGridItemInfo}>
         <div className={styles.workTitle}>{post.frontmatter.title}</div>
         <div className={styles.tagsCollection}>{tags}</div>
-      </Link>
+  <div className={styles.workGridItemDesc}>{post.frontmatter.shortDesc}</div>
+      </div>
     </div>
   )
 }

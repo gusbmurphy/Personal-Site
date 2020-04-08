@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styles from "../styles/writings.module.css"
+import styles from "../styles/workPage.module.css"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -14,12 +14,18 @@ export default function Template({
     <div className={styles.postContainer}>
       <div className={styles.post}>
         <div className={styles.header}>
-        <h1 className={styles.title}>{frontmatter.title}</h1>
-          <h4 className={styles.meta}>
-            {frontmatter.date} {tags}
-          </h4>
+          <div className={styles.previewImage}>
+            <img src={`../../${frontmatter.previewImage}`} />
+            <div className={styles.imageTransparency}></div>
+          </div>
+          <div className={styles.workInfo}>
+            <h1 className={styles.title}>{frontmatter.title}</h1>
+            <div className={styles.meta}>
+              {frontmatter.date}
+              <div className={styles.tagCollection}>{tags}</div>
+            </div>
+          </div>
         </div>
-  <div className={styles.previewImage}><img src={`../../${frontmatter.previewImage}`}/></div>
         <div className={styles.content}>{frontmatter.description}</div>
       </div>
     </div>

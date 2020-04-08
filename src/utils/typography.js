@@ -54,7 +54,11 @@ GithubTheme.overrideThemeStyles = ({ rhythm }, options) => ({
     color: "blue",
     textDecoration: "underline",
   },
-  "@media (max-width: 800px)": {},
+  // "@media (max-width: 749px)": {
+  //   h1: {
+  //     fontSize: `2.8em`
+  //   }
+  // },
 })
 GithubTheme.bodyColor = ColorScheme.text
 const typography = new Typography(GithubTheme)
