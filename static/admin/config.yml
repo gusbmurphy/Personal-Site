@@ -2,7 +2,7 @@ backend:
   name: github
   repo: gusbmurphy/Personal-Site
 
-media_folder: static/assets
+# media_folder: static/assets
 public_folder: assets
 
 media_library:
