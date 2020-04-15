@@ -104,12 +104,12 @@ class Layout extends React.Component {
         </div>
         {/* </div> */}
         <div className={styles.bgArt}>
-          <Art
+          {/* <Art
             name="pts_anim"
             background={ColorScheme.background}
             pause="false"
             style={{ height: "100%" }}
-          />
+          /> */}
         </div>
       </div>
     )

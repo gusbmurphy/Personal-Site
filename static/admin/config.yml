@@ -26,5 +26,10 @@ collections:
       - { name: tags, label: Tags, widget: "list" }
       - { name: shortDesc, label: Short Description, widget: "string" }
       - { name: description, label: Full Description, widget: "text" }
-      - { name: previewImage, label: Preview Image, widget: "image" }
+      - { name: previewImage, label: Preview Image, widget: "image", media_library:
+            config:
+              multiple: false }
+      - { name: previewImage, label: Preview Image, widget: "image", media_library:
+            config:
+              multiple: true }
       - { name: "templateKey", widget: "hidden", default: "work" }

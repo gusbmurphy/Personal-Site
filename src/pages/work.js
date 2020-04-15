@@ -1,4 +1,5 @@
-import React from "react"
+import React, { Fragment } from "react"
+import Media from "react-media"
 // import Text from "../components/text"
 import styles from "../styles/work.module.css"
 import { Link, useStaticQuery } from "gatsby"
@@ -6,9 +7,9 @@ import { graphql } from "gatsby"
 
 const WorkItem = ({ post }) => {
   let tags = post.frontmatter.tags.map(tag => (
-    <span className={styles.tag} key={tag}>
+    <li className={styles.tag} key={tag}>
       {tag}
-    </span>
+    </li>
   ))
   return (
     <div className={styles.workGridItem}>
@@ -17,8 +18,36 @@ const WorkItem = ({ post }) => {
       </Link>
       <div className={styles.workGridItemInfo}>
         <div className={styles.workTitle}>{post.frontmatter.title}</div>
-        <div className={styles.tagsCollection}>{tags}</div>
-  <div className={styles.workGridItemDesc}>{post.frontmatter.shortDesc}</div>
+        <br></br>
+        <div className={styles.workGridItemDesc}>
+          {post.frontmatter.shortDesc}
+        </div>
+      </div>
+      <div className={styles.workGridItemEnd}>
+        {post.frontmatter.date}
+        <br></br>
+        <ul className={styles.tagsCollection}>{tags}</ul>
+      </div>
+    </div>
+  )
+}
+
+const MobileWorkItem = ({ post }) => {
+  let tags = post.frontmatter.tags.map(tag => (
+    <li className={styles.tag} key={tag}>
+      {tag}
+    </li>
+  ))
+  return (
+    <div className={styles.workGridItem}>
+      <Link to={post.fields.slug} className={styles.workGridItemImg}>
+        <img src={`../../${post.frontmatter.previewImage}`} />
+      </Link>
+      <div className={styles.workGridItemInfo}>
+        <div className={styles.workTitle}>{post.frontmatter.title}</div>
+        {post.frontmatter.date}
+        <br></br>
+        <ul className={styles.tagsCollection}>{tags}</ul>
       </div>
     </div>
   )
@@ -30,7 +59,20 @@ export default ({
   },
 }) => {
   const works = allMarkdown.map(markdown => (
-    <WorkItem key={markdown.node.id} post={markdown.node} />
+    <Media
+      queries={{
+        mobile: "(max-width: 499px)",
+      }}
+    >
+      {matches => (
+        <Fragment>
+          {matches.mobile && <MobileWorkItem key={markdown.node.id} post={markdown.node} />}
+          {!matches.mobile && (
+            <WorkItem key={markdown.node.id} post={markdown.node} />
+          )}
+        </Fragment>
+      )}
+    </Media>
   ))
   return (
     <div style={{ textAlign: `center` }}>

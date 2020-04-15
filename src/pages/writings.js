@@ -13,10 +13,7 @@ const PostLink = ({ post }) => {
   return (
     <div>
       <li>
-        <Link to={post.fields.slug}>
-          {post.frontmatter.title} ({post.frontmatter.date})
-        </Link>
-        {tags}
+        <Link to={post.fields.slug}>{post.frontmatter.title}</Link> ({post.frontmatter.date}){tags}
       </li>
     </div>
   )
@@ -30,11 +27,14 @@ export default ({
   edges.forEach(edge => {
     console.log(edge.node.frontmatter.tags)
   })
-  const Posts = edges
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+  const Posts = edges.map(edge => (
+    <PostLink key={edge.node.id} post={edge.node} />
+  ))
   return (
     <div>
-      <div className={styles.contentSummary}>I occasionally write, mostly about video games unfortunately!</div>
+      <div className={styles.contentSummary}>
+        I occasionally write, mostly about video games unfortunately!
+      </div>
       <ul className={styles.postsList}>{Posts}</ul>
     </div>
   )
@@ -44,7 +44,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: {fileAbsolutePath: {regex: "/content/writing/.*\\\\.md$/"}}
+      filter: { fileAbsolutePath: { regex: "/content/writing/.*\\\\.md$/" } }
     ) {
       edges {
         node {

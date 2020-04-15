@@ -11,13 +11,12 @@
 .menu {
   width: 100%;
   z-index: 1;
-  padding: 1em;
   display: flex;
-  font-size: larger;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   vertical-align: text-top;
+  padding-top: 1em;
 }
 .menu > div {
   flex-basis: 100px;
@@ -28,43 +27,36 @@
 
 .name {
   flex-grow: 1;
-  font-family: upgrade, sans-serif;
-  font-size: larger;
-  font-weight: 500;
-  font-style: normal;
+  padding-left: 1em;
 }
 
 /* Nav */
 .nav {
   flex-grow: 1;
+  text-align: center;
 }
 .nav ul {
   list-style: none;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 0.9em;
   margin: 0;
+  padding: 0;
   display: flex;
 }
 .nav li {
   flex-grow: 1;
+  flex-basis: 0;
 }
 .nav a {
   text-decoration: none;
 }
 .navLinkActive {
-  border-bottom: 3px solid #0009FF;
+  /* border-bottom: 3px solid #0009FF; */
 }
 
 .links {
   flex-grow: 1;
   text-align: right;
-}
-
-.infoBar {
-  background: white;
-  float: right;
-  box-shadow: 0px 3px 5px grey;
+  padding-right: 1em
 }
 
 /* Content */
@@ -77,12 +69,12 @@
 }
 .contentSummary {
   text-align: center;
-  margin-top: 3em;
+  margin-top: -2em;
   margin-bottom: 3em;
 }
 
 /* For larger windows */
-@media (min-width: 1100px) {
+/* @media (min-width: 1100px) {
   .mainGrid {
     margin: auto;
     width: 80%;
@@ -90,7 +82,7 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: repeat(3, auto);
   }
-}
+} */
 
 /* For smaller windows */
 
@@ -103,9 +95,9 @@
     flex-basis: 0;
   }
   .nav {
-    font-size: medium;
     width: 60%;
     margin: auto;
+    padding-right: 0;
   }
   .nav a {
     margin: 0.2em;
@@ -113,22 +105,22 @@
   .links {
     display: flex;
     flex-direction: row;
-    font-size: medium;
     margin: auto;
+    padding-right: 0;
   }
   .links > div {
     margin-left: 0.5em;
     margin-right: 0.5em;
   }
   .name {
-    font-size: large;
+    padding-left: 0;
   }
   .content {
-    width: 90%;
-    margin-top: 120px;
+    width: 100%;
+    padding-top: 4em;
+    /* margin-top: 120px; */
   }
   .contentSummary {
-    font-size: small;
   }
 }
 

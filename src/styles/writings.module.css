@@ -4,6 +4,10 @@
 .post {
 }
 
+h1 {
+  margin-top: 0;
+}
+
 .title {
   margin-bottom: 0;
   font-size: 3.6em;
@@ -12,7 +16,6 @@
 .meta {
   margin-top: 0;
   margin-bottom: 2em;
-  font-size: smaller;
 }
 
 .postsList {
@@ -22,23 +25,12 @@
 
 .tag {
   margin-left: 0.3em;
-  text-transform: uppercase;
-  color: #F6F6F6;
-  background-color: #0009FF;
+  color: #FEF49C;
+  background-color: black;
 }
 
 .contentSummary {
   text-align: center;
-  margin-top: 3em;
+  margin-top: -2em;
   margin-bottom: 3em;
-}
-
-.previewImage {
-  
-}
-
-@media (max-width: 749px) {
-  .contentSummary {
-    font-size: small;
-  }
 }
