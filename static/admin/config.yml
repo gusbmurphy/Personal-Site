@@ -33,14 +33,14 @@ collections:
       - { name: shortDesc, label: Short Description, widget: "string" }
       - { name: description, label: Full Description, widget: "text" }
       - name: previewImage
-        label: Preview Image
+        label: "Preview Image"
         widget: "image"
         allow_multiple: false
         media_library:
           config:
             multiple: false
       - name: imageGallery
-        label: Image Gallery
+        label: "Image Gallery"
         widget: "image"
         allow_multiple: true
         media_library:
