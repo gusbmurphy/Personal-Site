@@ -5,6 +5,12 @@ backend:
 media_folder: static/assets
 public_folder: assets
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dtc0i7udk
+    api_key: 234775223881751
+
 collections:
   - name: writing
     label: Writing
@@ -26,6 +32,18 @@ collections:
       - { name: tags, label: Tags, widget: "list" }
       - { name: shortDesc, label: Short Description, widget: "string" }
       - { name: description, label: Full Description, widget: "text" }
-      - { name: previewImage, label: Preview Image, widget: "image", allow_multiple: false }
-      - { name: imageGallery, label: Preview Image, widget: "image", allow_multiple: true }
+      - name: previewImage
+        label: Preview Image
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false
+      - name: imageGallery
+        label: Image Gallery
+        widget: "image"
+        allow_multiple: true
+        media_library:
+          config:
+            multiple: true
       - { name: "templateKey", widget: "hidden", default: "work" }
