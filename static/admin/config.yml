@@ -3,7 +3,7 @@ backend:
   repo: gusbmurphy/Personal-Site
 
 # media_folder: static/assets
-public_folder: assets
+# public_folder: assets
 
 media_library:
   name: cloudinary
@@ -33,14 +33,14 @@ collections:
       - { name: shortDesc, label: Short Description, widget: "string" }
       - { name: description, label: Full Description, widget: "text" }
       - name: previewImage
-        label: "Preview Image"
+        label: PreviewImage
         widget: "image"
         allow_multiple: false
         media_library:
           config:
             multiple: false
       - name: imageGallery
-        label: "Image Gallery"
+        label: ImageGallery
         widget: "image"
         allow_multiple: true
         media_library:
