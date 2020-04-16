@@ -36,14 +36,10 @@ collections:
         label: PreviewImage
         widget: "image"
         allow_multiple: false
-        media_library:
-          config:
-            multiple: false
+        multiple_config_media_library: false
       - name: imageGallery
         label: ImageGallery
         widget: "image"
         allow_multiple: true
-        media_library:
-          config:
-            multiple: true
+        multiple_config_media_library: true
       - { name: "templateKey", widget: "hidden", default: "work" }
