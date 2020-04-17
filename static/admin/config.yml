@@ -37,11 +37,11 @@ collections:
         widget: "image"
         media_library:
           config:
-            multiple: false
+            allow_multiple: false
       - name: imageGallery
         label: ImageGallery
         widget: "image"
         media_library:
           config:
-            multiple: true
+            allow_multiple: true
       - { name: "templateKey", widget: "hidden", default: "work" }
