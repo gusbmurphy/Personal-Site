@@ -2,8 +2,8 @@ backend:
   name: github
   repo: gusbmurphy/Personal-Site
 
-# media_folder: static/assets
-# public_folder: assets
+media_folder: static/assets
+public_folder: assets
 
 media_library:
   name: cloudinary
@@ -35,9 +35,13 @@ collections:
       - name: previewImage
         label: PreviewImage
         widget: "image"
-        allow_multiple: false
+        media_library:
+          config:
+            multiple: false
       - name: imageGallery
         label: ImageGallery
         widget: "image"
-        allow_multiple: true
+        media_library:
+          config:
+            multiple: true
       - { name: "templateKey", widget: "hidden", default: "work" }
