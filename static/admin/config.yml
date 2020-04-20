@@ -35,12 +35,14 @@ collections:
       - name: previewImage
         label: PreviewImage
         widget: "image"
+        allow_multiple: false
         media_library:
           config:
             allow_multiple: false
       - name: imageGallery
         label: ImageGallery
         widget: "image"
+        allow_multiple: true
         media_library:
           config:
             allow_multiple: true
