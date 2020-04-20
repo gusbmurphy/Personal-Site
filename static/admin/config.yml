@@ -10,6 +10,7 @@ media_library:
   config:
     cloud_name: dtc0i7udk
     api_key: 234775223881751
+    multiple: true
 
 collections:
   - name: writing
