@@ -26,7 +26,8 @@ description: >-
 
 
   Fusce dolor magna, pulvinar ac enim sed, interdum consequat velit. Maecenas vestibulum, mi quis facilisis hendrerit, tortor tortor imperdiet ex, eu aliquam lectus turpis sed sem. Praesent et augue eu metus maximus laoreet. Curabitur id nulla lacus. Cras pretium nisi a nunc pulvinar, sed blandit nisl placerat. Nunc ac arcu vitae diam molestie aliquet ultrices sit amet arcu. Phasellus nec orci quis lacus maximus sollicitudin. Nulla laoreet sem erat, nec hendrerit felis interdum quis. Nullam aliquet urna non purus ultrices fermentum. Donec suscipit nisl at odio blandit, sit amet hendrerit lorem egestas.
-previewImage: assets/google-game-builder.jpg
+previewImage:
+  - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970582/samples/animals/kitten-playing.gif
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970581/samples/landscapes/nature-mountains.jpg
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970577/samples/landscapes/architecture-signs.jpg
