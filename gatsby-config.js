@@ -1,6 +1,4 @@
-require('dotenv').config({
-  path: `.env.development.${process.env.NODE_ENV}`,
-});
+require('dotenv').config();
 
 module.exports = {
   plugins: [
@@ -30,22 +28,13 @@ module.exports = {
         component: require.resolve(`./src/components/layout.js`),
       },
     },
-    // {
-    //   resolve: `gatsby-source-cloudinary`,
-    //   options: {
-    //     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    //     apiKey: process.env.CLOUDINARY_API_KEY,
-    //     apiSecret: process.env.CLOUDINARY_API_SECRET
-    //   }
-    // },
     {
-      resolve: 'gatsby-transformer-cloudinary',
+      resolve: `gatsby-source-cloudinary`,
       options: {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
         apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        uploadFolder: 'gatsby-cloudinary',
-      },
+        apiSecret: process.env.CLOUDINARY_API_SECRET
+      }
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
