@@ -22,8 +22,7 @@ description: >-
 
 
   Ut scelerisque libero vel tellus egestas, luctus mollis tortor iaculis. Proin ultrices nunc ut neque tristique commodo. Donec et odio nec turpis finibus pulvinar ac ac ligula. Etiam auctor auctor risus at vehicula. Nullam ut iaculis massa. Proin varius libero libero, quis ultricies sem placerat sed. Sed commodo dictum tortor, vitae auctor diam porta ut. Sed urna libero, ullamcorper eget libero non, imperdiet ultrices lacus. Donec eu aliquet tellus, ultricies bibendum tortor. Quisque porta venenatis sem, nec ullamcorper ligula blandit eget. Nulla eget iaculis urna. Maecenas aliquam vulputate nunc a efficitur. Suspendisse mauris sapien, dictum a sapien et, ultricies dignissim neque. Morbi quis velit a ligula vehicula rutrum. Suspendisse bibendum enim libero, vitae rhoncus quam lacinia id. Praesent arcu est, rhoncus sed risus egestas, pharetra convallis lorem.
-previewImage:
-  - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970575/samples/ecommerce/shoes.png
+previewImage: https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970575/samples/ecommerce/shoes.png
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970581/samples/landscapes/nature-mountains.jpg
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970577/samples/landscapes/architecture-signs.jpg

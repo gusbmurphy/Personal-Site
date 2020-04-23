@@ -35,8 +35,7 @@ description: >-
 
 
   Mauris faucibus, ligula nec maximus efficitur, velit nibh congue lacus, et mattis nisl nisl vitae tortor. Etiam id sem vitae sapien ullamcorper laoreet. Donec suscipit quam id risus venenatis finibus. Curabitur orci tortor, maximus eget ligula mollis, mattis rutrum tortor. Vivamus eget pellentesque purus. Suspendisse tincidunt eleifend turpis gravida aliquet. Etiam efficitur lorem sit amet suscipit faucibus.
-previewImage:
-  - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970566/sample.jpg
+previewImage: https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970566/sample.jpg
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970577/samples/people/bicycle.jpg
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970574/samples/people/smiling-man.jpg

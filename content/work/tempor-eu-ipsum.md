@@ -36,8 +36,7 @@ description: >-
 
 
   Nunc condimentum semper eros, et molestie ipsum facilisis at. Etiam malesuada vel libero sit amet sollicitudin. Cras commodo suscipit suscipit. Praesent iaculis justo sit amet malesuada tincidunt. Aenean fermentum vitae dui sed euismod. In fringilla sagittis semper. Nam eget tempor ligula. Nulla condimentum feugiat mi eu semper. Aenean placerat condimentum diam id volutpat. Pellentesque tempus, felis non pellentesque ultrices, felis nisi rutrum metus, eget accumsan est turpis eu risus. Mauris sagittis mi eu lectus rutrum hendrerit. Ut vehicula diam in pretium dignissim. Praesent condimentum vehicula tincidunt. Sed et est vel risus consequat porttitor sed non sapien. Fusce vel lectus placerat tortor ornare convallis.
-previewImage:
-  - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970572/samples/animals/reindeer.jpg
+previewImage: https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970572/samples/animals/reindeer.jpg
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970576/samples/animals/three-dogs.jpg
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970571/samples/animals/cat.jpg

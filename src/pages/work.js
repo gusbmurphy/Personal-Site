@@ -14,7 +14,7 @@ const WorkItem = ({ post }) => {
   return (
     <div className={styles.workGridItem}>
       <Link to={post.fields.slug} className={styles.workGridItemImg}>
-        <img src={`../../${post.frontmatter.previewImage}`} />
+      <img src={post.frontmatter.previewImage} />
       </Link>
       <div className={styles.workGridItemInfo}>
         <div className={styles.workTitle}>{post.frontmatter.title}</div>
@@ -41,7 +41,7 @@ const MobileWorkItem = ({ post }) => {
   return (
     <div className={styles.workGridItem}>
       <Link to={post.fields.slug} className={styles.workGridItemImg}>
-        <img src={`../../${post.frontmatter.previewImage}`} />
+        <img src={post.frontmatter.previewImage} />
       </Link>
       <div className={styles.workGridItemInfo}>
         <div className={styles.workTitle}>{post.frontmatter.title}</div>
@@ -102,7 +102,7 @@ export const pageQuery = graphql`
             title
             shortDesc
             tags
-            previewImage
+            
           }
         }
       }
