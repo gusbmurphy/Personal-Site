@@ -3,7 +3,7 @@ import styles from "../styles/layout.module.css"
 import Text from "../components/text"
 
 export default () => (
-  <div>
+  <Text>
     <div className={styles.contentSummary}>Learn some more about me.</div>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
@@ -64,5 +64,5 @@ export default () => (
       ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis,
       aliquet eget, justo.{" "}
     </p>
-  </div>
+  </Text>
 )

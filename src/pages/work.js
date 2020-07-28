@@ -103,7 +103,7 @@ export const pageQuery = graphql`
             title
             shortDesc
             tags
-            
+            previewImage
           }
         }
       }

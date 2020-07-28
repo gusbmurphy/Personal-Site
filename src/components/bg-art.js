@@ -59,7 +59,7 @@ class Wave extends PtsCanvas {
   }
 
   animate(time, ftime) {
-    let t = Num.cycle((time % 10000) / 10000)
+    let t = Num.cycle((time % 6000) / 6000)
 
     this.c1 = new Pt([
       this.space.width * 0.25,

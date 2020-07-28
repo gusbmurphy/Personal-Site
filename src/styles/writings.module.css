@@ -24,13 +24,16 @@ h1 {
 }
 
 .tag {
+  text-transform: capitalize;
   margin-left: 0.3em;
-  color: #FEF49C;
-  background-color: black;
 }
 
 .contentSummary {
   text-align: center;
   margin-top: -2em;
   margin-bottom: 3em;
+}
+
+p {
+  margin: 0;
 }

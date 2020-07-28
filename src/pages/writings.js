@@ -31,12 +31,12 @@ export default ({
     <PostLink key={edge.node.id} post={edge.node} />
   ))
   return (
-    <div>
+    <Text>
       <div className={styles.contentSummary}>
         I occasionally write, mostly about video games unfortunately!
       </div>
       <ul className={styles.postsList}>{Posts}</ul>
-    </div>
+    </Text>
   )
 }
 

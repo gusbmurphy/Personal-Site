@@ -15,16 +15,23 @@ import ColorScheme from "../utils/colorscheme"
 
 // TODO: Make it so that when resizing the window, the animation is not "redrawn". Not sure how to do this!
 
+let minWidth = 400;
+let minHeight = 500;
+
 class Art extends PtsCanvas {
   animate (time, ftime, space) { 
-    let t = Num.cycle((time%20000)/20000);
+    let t = Num.cycle((time%60000)/60000);
 
-    let artWidth = space.width * (1/8)
-    let artHeight = space.height * (2/5)
+    let artWidth = space.width /** (3/8) < minWidth ? minWidth : space.width * (3/8)*/
+    let artHeight = space.height * (2/5) < minHeight ? minHeight : space.height * (2/5)
 
-    let leftBound = space.width * (4/5)
-    let rightBound = leftBound + artWidth
-    let bottomBound = space.height * (5/6)
+    // let minDistanceFromRightEdge = artWidth + 50;
+    let calcLeftBound = space.width * (2/5)
+
+    // let leftBound = calcLeftBound > (space.width - minDistanceFromRightEdge) ? minDistanceFromRightEdge : calcLeftBound
+    let leftBound = /*calcLeftBound*/ 0
+    let rightBound = /*leftBound + artWidth*/ space.width
+    let bottomBound = space.height /** (9/10)*/
     let topBound = bottomBound - artHeight
 
     let bottomLeft = new Pt([leftBound, bottomBound])
@@ -33,7 +40,7 @@ class Art extends PtsCanvas {
     let curveStart = new Pt([leftBound, topBound + 50])
     let curveEnd = new Pt([rightBound, topBound])
 
-    let variance = ((artHeight * (1/8)) * (0.5 - t));
+    let variance = ((artHeight * (2/8)) * (0.5 - t));
     let c1 = new Pt([leftBound + (artWidth * (1/4)), curveStart.y + variance])
     let c2 = new Pt([leftBound + (artWidth * (3/4)), curveEnd.y - variance])
   
@@ -41,7 +48,9 @@ class Art extends PtsCanvas {
     curve.unshift(bottomLeft)
     curve.push(bottomRight)
 
-    this.form.fillOnly("#fbfb7d").line(curve)
+    this.form.fillOnly("rgba(80,30,50,.6)").line(curve)
+    //"rgba(80,30,50,.8)"
+    //"#fbfb7d"
   }
 
   start (bound, space) { 

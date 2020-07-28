@@ -35,7 +35,7 @@ description: >-
 
   Quis varius quam quisque id diam vel quam elementum pulvinar. Consectetur lorem donec massa sapien faucibus et. Aliquet lectus proin nibh nisl condimentum. Convallis convallis tellus id interdum velit laoreet id donec. Adipiscing diam donec adipiscing tristique risus nec feugiat. Tempor orci dapibus ultrices in. Amet commodo nulla facilisi nullam. Et leo duis ut diam. Aliquam sem fringilla ut morbi tincidunt augue. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Varius vel pharetra vel turpis nunc eget lorem dolor sed. Laoreet sit amet cursus sit amet dictum sit. Vulputate eu scelerisque felis imperdiet proin fermentum. Eu feugiat pretium nibh ipsum consequat nisl vel. Turpis egestas maecenas pharetra convallis posuere morbi leo. Aliquam vestibulum morbi blandit cursus risus.
 previewImage:
-  - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970579/samples/ecommerce/leather-bag-gray.jpg
+  https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970579/samples/ecommerce/leather-bag-gray.jpg
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970573/samples/food/pot-mussels.jpg
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1586970571/samples/food/dessert.jpg

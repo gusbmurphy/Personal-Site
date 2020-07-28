@@ -1,0 +1,8 @@
+.text {
+    max-width: 800px;
+    margin: auto;
+}
+
+.text p {
+    margin-bottom: 0.8em;
+}

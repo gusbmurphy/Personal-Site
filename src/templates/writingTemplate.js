@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styles from "../styles/writings.module.css"
+import Text from "../components/text.js"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -11,7 +12,7 @@ export default function Template({
     <span className={styles.tag}>{tag}</span>
   ))
   return (
-    <div className={styles.postContainer}>
+    <Text>
       <div className={styles.post}>
         <div className={styles.header}>
           <h1 className={styles.title}>{frontmatter.title}</h1>
@@ -24,7 +25,7 @@ export default function Template({
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
-    </div>
+    </Text>
   )
 }
 

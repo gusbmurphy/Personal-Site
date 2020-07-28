@@ -1,5 +1,6 @@
 import React from "react"
+import Styles from "../styles/text.module.css"
 
 export default ({ children }) => (
-  <div>{children}</div>
+  <div className={Styles.text}>{children}</div>
 )
