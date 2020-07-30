@@ -58,11 +58,11 @@ const InfoBar = () => (
   </div>
 )
 
-const Topbar = () => (
-  <Headroom>
-    <h1>Hello from Headroom!</h1>
-  </Headroom>
-)
+// const Topbar = () => (
+//   <Headroom>
+//     <h1>Hello from Headroom!</h1>
+//   </Headroom>
+// )
 
 class Layout extends React.Component {
   constructor(props) {
