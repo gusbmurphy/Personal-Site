@@ -40,6 +40,10 @@
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
   padding: 1em 0;
+}
+
+.workGridItem:not(:first-of-type) {
+
   border-top: 1px dotted black;
 }
 

@@ -12,8 +12,8 @@ body {
   margin: 1em;
 }
 
-@media screen and (max-width: 999px) {
+/* @media screen and (max-width: 999px) {
   html {
     font-size: calc(11px + 4 * ((100vw - 320px) / 1000));
   }
-}
+} */

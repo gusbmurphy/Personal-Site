@@ -1,77 +1,88 @@
 import {
   Pt,
-  Group,
-  Line,
-  Create,
-  Shaping,
   Curve,
-  Geom,
   Num,
 } from "pts/dist/es5"
 
 import { PtsCanvas } from "react-pts-canvas"
 
-import ColorScheme from "../utils/colorscheme"
+let minHeight = 300
 
-// TODO: Make it so that when resizing the window, the animation is not "redrawn". Not sure how to do this!
+class Art extends PtsCanvas {
+  animate(time, ftime, space) {
+    let t = Num.cycle((time % 60000) / 60000)
 
-class Wave extends PtsCanvas {
-  constructor() {
-    super()
+    let artWidth = space.width
+    let artHeight =
+      space.height * (2 / 5) < minHeight ? minHeight : space.height * (2 / 5)
 
-    this.colors = [ColorScheme.secondary, ColorScheme.tertiary]
+    let leftBound = 0
+    let rightBound = space.width
+    let bottomBound = space.height
 
-    this.bottomLeft = null
-    this.bottomRight = null
-    this.curveStart = null
-    this.curveEnd = null
+    let bottomLeft = new Pt([leftBound, bottomBound])
+    let bottomRight = new Pt([rightBound, bottomBound])
 
-    // "c1" and "c2" are the control points for the curve.
-    this.c1 = null
-    this.c2 = null
-  }
-
-  // Given a value, "t", between 0 and 1, return a point between the starting position and end position.
-  pointAt(t, startPos, endPos) {
-    let delta = new Group(startPos, endPos)
-    let value = Shaping.linear(t, 1)
-    return delta.interpolate(value)
-  }
-
-  componentDidUpdate() {}
-
-  // Override PtsCanvas' start function
-  start(space, bound) {
-    if (typeof window !== `undefined`) {
-      this.bottomLeft = new Pt([0, this.space.height])
-      this.bottomRight = new Pt([this.space.width, this.space.height])
-      this.curveStart = new Pt([0, this.space.height / 2])
-      this.curveEnd = new Pt([this.space.width, this.space.height / 2])
-
-      this.c1 = new Pt([
-        this.space.width * 0.25,
-        this.space.height / 2 + this.space.height * 0.75,
+    function createCurve(
+      percOfTotalHeight,
+      startHeightDif,
+      endHeightDif,
+      handle1Perc,
+      handle2Perc,
+      variance1,
+      variance2
+    ) {
+      let height = artHeight * percOfTotalHeight
+      let top = bottomBound - height
+      let start = new Pt([leftBound, top + startHeightDif])
+      let end = new Pt([rightBound, top + endHeightDif])
+      let c1 = new Pt([
+        leftBound + artWidth * handle1Perc,
+        start.y + height * variance1,
       ])
-      this.c2 = new Pt([this.space.width * 0.75, this.space.height * 0.75])
+      let c2 = new Pt([
+        leftBound + artWidth * handle2Perc,
+        end.y + height * variance2,
+      ])
 
-      this.bgCurve = Curve.cardinal([this.curveStart, this.c1, this.c2, this.curveEnd], 10)
+      let curve = Curve.cardinal([start, c1, c2, end], 10)
+      curve.unshift(bottomLeft)
+      curve.push(bottomRight)
+      return curve
     }
-  }
 
-  animate(time, ftime) {
-    let t = Num.cycle((time % 6000) / 6000)
+    let curve1 = createCurve(
+      1,
+      50,
+      -10,
+      1 / 4,
+      3 / 4,
+      (2 / 8) * (0.5 - t),
+      (2 / 8) * (0.5 - t)
+    )
+    let curve2 = createCurve(
+      0.6,
+      20,
+      -10,
+      1 / 5,
+      3 / 5,
+      (1 / 8) * (0.4 - t),
+      -(1 / 8) * (0.4 - t)
+    )
+    let curve3 = createCurve(
+      0.3,
+      0,
+      30,
+      3 / 7,
+      4 / 5,
+      -(1 / 3) * (0.6 - t),
+      (1 / 3) * (0.6 - t)
+    )
 
-    this.c1 = new Pt([
-      this.space.width * 0.25,
-      (this.space.height / 2) * -t + this.space.height * 0.75,
-    ])
-    this.c2 = new Pt([this.space.width * 0.75, this.space.height * 0.75 * t])
-
-    this.bgCurve.unshift(this.bottomLeft)
-    this.bgCurve.push(this.bottomRight)
-
-    this.form.fillOnly("rgba(80,30,50,.8)").line(this.bgCurve)
+    this.form.fillOnly("#ff9234").line(curve1)
+    this.form.fillOnly("#ffcd3c").line(curve2)
+    this.form.fillOnly("#35d0ba").line(curve3)
   }
 }
 
-export { Wave as default }
+export { Art as default }
