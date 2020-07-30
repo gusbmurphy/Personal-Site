@@ -52,6 +52,9 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-react": "^7.20.5",
     "prettier": "^1.19.1"
   }
 }
