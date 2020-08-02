@@ -45,7 +45,7 @@ const MobileWorkItem = ({ post }) => {
         <img src={post.frontmatter.previewImage} />
       </Link>
       <div className={styles.workGridItemInfo}>
-        <div className={styles.workTitle}>{post.frontmatter.title}</div>
+        <h2>{post.frontmatter.title}</h2>
         {post.frontmatter.date}
         <br></br>
         <ul className={styles.tagsCollection}>{tags}</ul>

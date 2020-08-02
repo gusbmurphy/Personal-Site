@@ -18,10 +18,6 @@
   grid-gap: 20px; */
 }
 
-.workTitle {
-  text-decoration: underline;
-}
-
 /* For smaller windows */
 @media (max-width: 1099px) {
   .workGrid {

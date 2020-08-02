@@ -21,6 +21,7 @@
 
 .menu a {
   text-decoration: none;
+  color: black;
 }
 .menu a:visited {
   color: black;
@@ -52,7 +53,7 @@
 }
 
 /* Nav */
-.nav {
+/* .nav {
   flex-grow: 1;
   text-align: center;
 }
@@ -71,8 +72,8 @@
   text-decoration: none;
 }
 .navLinkActive {
-  /* border-bottom: 3px solid #0009FF; */
-}
+  border-bottom: 3px solid #0009FF;
+} */
 
 .links {
   flex-grow: 1;
