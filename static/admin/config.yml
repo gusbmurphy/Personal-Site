@@ -39,7 +39,7 @@ collections:
         - { label: Display, name: display, widget: string }
         - { label: URL, name: url, widget: string }
       - { name: shortDesc, label: Short Description, widget: "string" }
-      - { name: description, label: Full Description, widget: "text" }
+      - { name: description, label: Full Description, widget: "markdown" }
       - name: previewImage
         label: PreviewImage
         widget: "image"
