@@ -1,4 +1,16 @@
-
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:active {
+  color: #35d0ba;
+}
+a:hover {
+  color: #d92027;
+}
 
 html {
   /* font-size: 15px; */

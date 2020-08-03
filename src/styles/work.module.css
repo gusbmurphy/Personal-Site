@@ -2,6 +2,10 @@
   color: black;
 }
 
+.workTitle h3 {
+  margin-top: 0;
+}
+
 .workContainer {
   display: inline-block;
   margin: auto;
@@ -34,8 +38,13 @@
   position: relative;
   text-align: left;
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 2fr 3fr;
   padding: 1em 0;
+}
+
+.workGridItem h3 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .workGridItem:not(:first-of-type) {
@@ -83,6 +92,12 @@
   text-transform: capitalize;
 }
 
+.linksCollection {
+  list-style: none;
+  padding-left: 0;
+  margin: 0
+}
+
 .workGridItem img {
   height: 100%;
   width: 100%;
@@ -110,7 +125,7 @@
 }
 
 .workGridItem a {
-  color: white;
+  text-decoration: underline;
 }
 
 .meta {
