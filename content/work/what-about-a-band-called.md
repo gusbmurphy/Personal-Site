@@ -6,6 +6,11 @@ tags:
   - Redux
   - Express
   - MongoDB
+links:
+  - display: whataboutabandcalled.com
+    url: https://whataboutabandcalled.com/
+  - display: GitHub
+    url: https://github.com/gusbmurphy/what-about-a-band-called
 shortDesc: A place to share and rank ideas for band names, and my first real
   full-stack application. This was a lot of fun to put together, and a great
   learning experience.
