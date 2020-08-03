@@ -26,7 +26,7 @@ const WorkItem = ({ post }) => {
       </Link>
       <div className={styles.workGridItemInfo}>
         <h3>{post.frontmatter.title}</h3>
-        <ul className={styles.tagsCollection}>{tags}</ul>
+        <div>{tags}</div>
         {post.frontmatter.date}
         <br></br>
         <ul className={styles.linksCollection}>{links}</ul>

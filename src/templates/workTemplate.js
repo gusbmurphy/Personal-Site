@@ -8,22 +8,27 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  let tags = frontmatter.tags.map(tag => (
-    <p className={styles.tag}>{tag}</p>
-  ))
+  // let tags = frontmatter.tags.map(tag => (
+  //   <p className={styles.tag}>{tag}</p>
+  // ))
+  let tags = ""
+  frontmatter.tags.forEach((tag, index) => {
+    tags += tag
+    if (index != (frontmatter.tags.length - 1)) tags += " / "
+  })
   let images = frontmatter.imageGallery.map(image => (
     <img src={image} />
   ))
   return (
     <div className={styles.mainContainer}>
+      <div className={styles.text}>
+        <h1 className={styles.title}>{frontmatter.title}</h1>
+        <div>{tags}</div>
+        <div>{frontmatter.date}</div>
+        <p><br/>{frontmatter.description}</p>
+      </div>
       <div className={styles.media}>
         {images}
-      </div>
-      <div className={styles.text}>
-        <p><h1 className={styles.title}>{frontmatter.title}</h1> {frontmatter.date}</p>
-        <br/>
-        {tags}
-        <p><br/>{frontmatter.description}</p>
       </div>
     </div>
   )

@@ -1,24 +1,27 @@
 .mainContainer {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 1fr;
 }
 .media {
   padding-right: 1em;
 }
 .media img {
   max-width: 100%;
+  border-top: 1px black dotted;
+  padding-top: 1em;
 }
-.media img:not(:last-child) {
+/* .media img:not(:last-child) {
   border-bottom: 1px black dotted;
   padding-bottom: 1em;
-}
+} */
 .media img:not(:first-child) {
   padding-top: 1em;
 }
 .text {
+  padding-bottom: 1em;
 }
 .title {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .tag {
   text-transform: capitalize;
