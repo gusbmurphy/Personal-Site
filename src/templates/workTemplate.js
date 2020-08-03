@@ -19,12 +19,18 @@ export default function Template({
   let images = frontmatter.imageGallery.map(image => (
     <img src={image} />
   ))
+  let links = frontmatter.links.map(link => (
+    <li>
+      <a target="_blank" rel="noopener noreferrer" href={link.url}>{link.display}</a>
+    </li>
+  ))
   return (
     <div className={styles.mainContainer}>
       <div className={styles.text}>
         <h1 className={styles.title}>{frontmatter.title}</h1>
         <div>{tags}</div>
         <div>{frontmatter.date}</div>
+        <ul className={styles.linkList}>{links}</ul>
         <p><br/>{frontmatter.description}</p>
       </div>
       <div className={styles.media}>
@@ -47,6 +53,10 @@ export const pageQuery = graphql`
         tags
         description
         imageGallery
+        links {
+          display
+          url
+        }
       }
     }
   }
