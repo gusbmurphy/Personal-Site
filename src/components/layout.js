@@ -21,7 +21,7 @@ const ListLink = props => (
 
 const Menu = () => (
   <div className={styles.menu}>
-    <span className={styles.name}><a href="/">Gus Murphy</a></span>
+    <span className={styles.name}><Link to="/">Gus Murphy</Link></span>
     <span className={styles.iconSpan}>
       <a
         href="https://github.com/gusbmurphy"

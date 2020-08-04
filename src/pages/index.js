@@ -25,7 +25,7 @@ const WorkItem = ({ post }) => {
         <img src={image} />
       </Link>
       <div className={styles.workGridItemInfo}>
-        <h3>{post.frontmatter.title}</h3>
+        <h3><Link to={post.fields.slug}>{post.frontmatter.title}</Link></h3>
         <div>{tags}</div>
         {post.frontmatter.date}
         <br></br>
