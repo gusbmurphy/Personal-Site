@@ -35,3 +35,7 @@
 .linkList a {
   text-decoration: underline;
 }
+
+.description p {
+  margin-bottom: 0.6em;
+}

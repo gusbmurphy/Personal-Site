@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styles from "../styles/workPage.module.css"
 import Img from "gatsby-image"
+import ReactMarkdown from "react-markdown/with-html"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -31,7 +32,7 @@ export default function Template({
         <div>{tags}</div>
         <div>{frontmatter.date}</div>
         <ul className={styles.linkList}>{links}</ul>
-        <p><br/>{frontmatter.description}</p>
+        <br/><p className={styles.description}><ReactMarkdown source={frontmatter.description}/></p>
       </div>
       <div className={styles.media}>
         {images}
