@@ -10,13 +10,13 @@
 /* Menu */
 .menu {
   font-size: larger;
-  /* width: 100%; */
   z-index: 1;
   display: flex;
   position: fixed;
   top: 0;
   vertical-align: text-top;
-  padding-top: 1em;
+  align-items: center;
+  height: 3em;
 }
 
 .menu a {
@@ -36,44 +36,19 @@
 .menu > * {
   padding-right: 0.6em;
 }
-/* .menu > div {
-  flex-basis: 100px;
-}
-.menu a {
-  text-decoration: none;
-} */
 
 .name {
   font-weight: bolder;
   flex-grow: 1;
   padding-left: 1em;
 }
-.iconSpan > * {
-  padding-right: 0.3em;
-}
-
-/* Nav */
-/* .nav {
-  flex-grow: 1;
-  text-align: center;
-}
-.nav ul {
-  list-style: none;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+.icons, .icons a > div {
   display: flex;
+  align-items: center;
 }
-.nav li {
-  flex-grow: 1;
-  flex-basis: 0;
+.icons svg {
+  height: auto;
 }
-.nav a {
-  text-decoration: none;
-}
-.navLinkActive {
-  border-bottom: 3px solid #0009FF;
-} */
 
 .links {
   flex-grow: 1;
