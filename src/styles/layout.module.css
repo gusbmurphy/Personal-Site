@@ -45,6 +45,7 @@
 .icons, .icons a > div {
   display: flex;
   align-items: center;
+  margin-right: 0.3em;
 }
 .icons svg {
   height: auto;
