@@ -10,15 +10,29 @@
 /* Menu */
 .menu {
   font-size: larger;
+  
+  width: 100%;
   z-index: 1;
   display: flex;
-  position: fixed;
+  position: sticky;
   top: 0;
   vertical-align: text-top;
   align-items: center;
   height: 3em;
 }
-
+.menuLeft {
+  /* flex: 1; */
+  display: flex;
+  justify-content: flex-start;
+}
+.menuLeft > * {
+  padding-right: 1rem;
+}
+.menuRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
 .menu a {
   text-decoration: none;
   color: black;
@@ -33,14 +47,10 @@
   color: #d92027;
 }
 
-.menu > * {
-  padding-right: 0.6em;
-}
-
 .name {
   font-weight: bolder;
   flex-grow: 1;
-  padding-left: 1em;
+  /* padding-left: 1em; */
 }
 .icons, .icons a > div {
   display: flex;
@@ -62,7 +72,7 @@
   width: 85%;
   padding-bottom: 10em;
   margin: auto;
-  margin-top: 5em;
+  /* margin-top: 5em; */
   max-width: 830px;
 }
 .contentSummary {

@@ -21,28 +21,33 @@ const ListLink = props => (
 
 const Menu = () => (
   <div className={styles.menu}>
-    <div className={styles.name}>
-      <Link to="/">Gus Murphy</Link>
+    <div className={styles.menuLeft}>
+      <div className={styles.name}>
+        <Link to="/">Gus Murphy</Link>
+      </div>
+      <Link to="/work">/ Work</Link>
     </div>
-    <div className={styles.icons}>
-      <a
-        href="https://github.com/gusbmurphy"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div>
-          <FaGithub />
-        </div>
-      </a>
-      <a
-        href="https://codepen.io/murphyg"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div>
-          <FaCodepen />
-        </div>
-      </a>
+    <div className={styles.menuRight}>
+      <div className={styles.icons}>
+        <a
+          href="https://github.com/gusbmurphy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div>
+            <FaGithub />
+          </div>
+        </a>
+        <a
+          href="https://codepen.io/murphyg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div>
+            <FaCodepen />
+          </div>
+        </a>
+      </div>
     </div>
     {/* <div className={styles.nav}>
       <ul>
