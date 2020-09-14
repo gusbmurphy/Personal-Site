@@ -83,7 +83,7 @@ export default function About() {
           correct way to slice pizza
         </PictureText>
         . Gus is currently looking for work in web development—you can find him
-        on LinkedIn and GitHub.
+        on <a href="https://www.linkedin.com/in/augustus-murphy-47b8b8193/" target="_blank" rel="noopener noreferrer">LinkedIn</a> and <a href="https://github.com/gusbmurphy" target="_blank" rel="noopener noreferrer">GitHub</a>.
       </p>
       <BGPicture
         shouldShow={showGus}

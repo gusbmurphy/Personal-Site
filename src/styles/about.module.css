@@ -8,3 +8,12 @@
   text-decoration: underline;
   text-decoration-color: gray;
 }
+
+.pictureText:hover {
+  color: #35d0ba;
+  text-decoration-color: #35d0ba;
+} 
+
+a {
+  text-decoration: underline;
+}

@@ -25,7 +25,7 @@ const Menu = () => (
       <div className={styles.name}>
         <Link to="/">Gus Murphy</Link>
       </div>
-      <Link to="/work">/ Work</Link>
+      <Link to="/work">Work</Link>
     </div>
     <div className={styles.menuRight}>
       <div className={styles.icons}>
