@@ -65,7 +65,7 @@ export default function About() {
           fixed={fixed}
           style={{
             left: leftPos - (100 + Math.random() * 100),
-            bottom: 50,
+            bottom: 100,
             position: "fixed",
             zIndex: -10,
             transform: `rotate(${-45 + Math.random() * 90}deg)`
