@@ -10,7 +10,7 @@ export default function About() {
   const [tcPos, setTcPos] = useState({ x: 50, y: 50 })
   const [showPizza, setShowPizza] = useState(false)
   const [pizzaPos, setPizzaPos] = useState({ x: 50, y: 50 })
-  const [mousePos, setMousePos] = useState(null);
+  const [mousePos, setMousePos] = useState(null)
 
   const data = useStaticQuery(graphql`
     query {
@@ -38,12 +38,11 @@ export default function About() {
     }
   `)
 
-  function PictureText({ setShowFunc, setPosFunc, children }) {
+  function PictureText({ setShowFunc, children }) {
     return (
-      <span
+      <a
         onMouseEnter={() => setShowFunc(true)}
         onMouseLeave={() => setShowFunc(false)}
-        onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}
         // Get positioning for associated image
         // ref={el => {
         //   if (!el) return
@@ -54,36 +53,64 @@ export default function About() {
         className={styles.pictureText}
       >
         {children}
-      </span>
+      </a>
     )
   }
 
   function BGPicture({ fixed, shouldShow }) {
-    const x = 50
-    const y = 50
-    if (shouldShow && mousePos) {
-      console.log(mousePos.x, mousePos.y)
-      return <Img fixed={fixed} style={{ left: mousePos.x + 10, top: mousePos.y + 10, position: "fixed" }} />
+    if (shouldShow) {
+      let leftPos = window.innerWidth / 2;
+      return (
+        <Img
+          fixed={fixed}
+          style={{
+            left: leftPos - (100 + Math.random() * 100),
+            bottom: 50,
+            position: "fixed",
+            zIndex: -10,
+            transform: `rotate(${-45 + Math.random() * 90}deg)`
+          }}
+        />
+      )
     }
     return null
   }
 
   return (
     <>
-      <p className={styles.about}>
-        <PictureText setShowFunc={setShowGus} setPosFunc={setGusPos}>
+      <p
+        className={styles.about}
+        // onMouseMove={e => setMousePos({ x: e.clientX, y: e.clientY })}
+      >
+        <PictureText setShowFunc={setShowGus}>
           Gus Murphy
         </PictureText>{" "}
         lives in the{" "}
-        <PictureText setShowFunc={setShowTc} setPosFunc={setTcPos}>
+        <PictureText setShowFunc={setShowTc}>
           Twin Cities
         </PictureText>
         . He's a musician, playing trombone and bass, and knows the{" "}
-        <PictureText setShowFunc={setShowPizza} setPosFunc={setPizzaPos}>
+        <PictureText setShowFunc={setShowPizza}>
           correct way to slice pizza
         </PictureText>
         . Gus is currently looking for work in web development—you can find him
-        on <a href="https://www.linkedin.com/in/augustus-murphy-47b8b8193/" target="_blank" rel="noopener noreferrer">LinkedIn</a> and <a href="https://github.com/gusbmurphy" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        on{" "}
+        <a
+          href="https://www.linkedin.com/in/augustus-murphy-47b8b8193/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://github.com/gusbmurphy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        .
       </p>
       <BGPicture
         shouldShow={showGus}
