@@ -29,4 +29,5 @@ previewImage:
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1596425098/personal-site/Kapture_2020-08-02_at_22.22.44_plorcx.gif
 templateKey: work
+backBurner: false
 ---

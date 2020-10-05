@@ -23,4 +23,5 @@ previewImage:
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1599254922/Kapture_2020-09-04_at_16.20.18_xlwhwh.gif
 templateKey: work
+backBurner: false
 ---
