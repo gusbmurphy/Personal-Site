@@ -2,6 +2,14 @@
   color: black;
 }
 
+.backBurnerHeader {
+  text-align: left;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  margin-top: 0.67em;
+  font-size: 1.5rem;
+}
+
 .workTitle h3 {
   margin-top: 0;
 }
@@ -16,17 +24,6 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  /* justify-items: center;
-  grid-template-columns: repeat(2, minmax(300px, 700px));
-  grid-auto-rows: minmax(100px, 250px);
-  grid-gap: 20px; */
-}
-
-/* For smaller windows */
-@media (max-width: 1099px) {
-  .workGrid {
-    margin: auto;
-  }
 }
 
 .workGridItem {
@@ -37,9 +34,13 @@
   width: 100%;
   position: relative;
   text-align: left;
-  display: grid;
-  grid-template-columns: 2fr 3fr;
+  display: flex;
+  /* grid-template-columns: 2fr 3fr; */
   padding: 1em 0;
+}
+
+.workGridItem:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .workGridItem h3 {
@@ -48,18 +49,7 @@
 }
 
 .workGridItem:not(:first-of-type) {
-
   border-top: 1px dotted black;
-}
-
-/* For mobile windows */
-@media (max-width: 599px) {
-  .workGridItem {
-    grid-template-columns: 1fr;
-  }
-}
-
-.workGridItemImg {
 }
 
 .workGridItemDesc {
@@ -68,25 +58,14 @@
 
 .workGridItemInfo {
   text-align: left;
-  flex: 1;
+  flex-grow: 1;
   padding: 0 1em;
-  /* right: 0;
-  bottom: 25%;
-  left: 50%;
-  margin-left: -50%;
-  text-align: center;
-  position: absolute;
-  z-index: 20; */
 }
-.workGridItemEnd {
-
-}
-
 
 .tagsCollection {
   list-style: none;
   padding-left: 0;
-  margin: 0
+  margin: 0;
 }
 .tag {
   text-transform: capitalize;
@@ -95,16 +74,13 @@
 .linksCollection {
   list-style: none;
   padding-left: 0;
-  margin: 0
+  margin: 0;
 }
 
 .workGridItem img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* position: absolute;
-  top: 0;
-  left: 0; */
   filter: grayscale(100%);
 }
 
@@ -115,12 +91,11 @@
 .workItemTransparency {
   height: 100%;
   width: 100%;
-  background: #0009FF;
+  background: #0009ff;
   position: absolute;
   top: 1em;
   left: 1em;
   z-index: 10;
-  /* opacity: 0.5; */
   mix-blend-mode: screen;
 }
 
@@ -129,31 +104,33 @@
 }
 
 .meta {
-  /* float: right; */
   margin-top: 0px;
-}
-
-/* Thanks to Ian Lunn for working on this excellent animation from his Hover.css 
-(https://ianlunn.github.io/Hover/) project! */
-.hvrGrowShadow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
-  transition-property: box-shadow, transform;
-}
-.hvrGrowShadow:hover, .hvrGrowShadow:focus, .hvrGrowShadow:active {
-  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
 }
 
 .contentSummary {
   text-align: center;
   margin-top: -2em;
   margin-bottom: 3em;
+}
+
+/* For smaller windows */
+@media (max-width: 1099px) {
+  .workGrid {
+    margin: auto;
+  }
+}
+
+/* For mobile windows */
+@media (max-width: 599px) {
+  .workGridItem {
+    flex-direction: column;
+  }
+  .workGridItem:nth-child(even) {
+    flex-direction: column;
+  }
+  .workGridItemInfo {
+    padding-top: 1em;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

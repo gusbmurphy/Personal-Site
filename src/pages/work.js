@@ -46,12 +46,19 @@ const WorkPage = ({
     allMarkdownRemark: { edges: allMarkdown },
   },
 }) => {
-  const works = allMarkdown.map(markdown => (
-    <WorkItem key={markdown.node.id} post={markdown.node} />
-  ))
+  let works = [];
+  let worksInProgress = [];
+  allMarkdown.forEach(markdown => {
+    const workItem = <WorkItem key={markdown.node.id} post={markdown.node} />
+    if (markdown.node.frontmatter.backBurner) worksInProgress.push(workItem)
+    else works.push(workItem)
+  })
+
   return (
     <div style={{ textAlign: `center` }}>
       <div className={styles.workGrid}>{works}</div>
+      <h1 className={styles.backBurnerHeader}>On the back burner... ♨️♨️♨️</h1>
+      <div className={styles.workGrid}>{worksInProgress}</div>
     </div>
   )
 }
