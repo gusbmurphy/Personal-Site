@@ -71,7 +71,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            backburner
+            backBurner
             date(formatString: "MMMM, YYYY")
             title
             shortDesc
