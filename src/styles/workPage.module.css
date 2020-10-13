@@ -39,3 +39,11 @@
 .description p {
   margin-bottom: 0.6em;
 }
+
+.description ul {
+  padding: 0 3em;
+}
+
+.description ul > li:not(:last-child) {
+  margin-bottom: 0.6em;
+}
