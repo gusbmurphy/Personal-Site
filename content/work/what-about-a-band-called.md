@@ -1,4 +1,5 @@
 ---
+backBurner: false
 date: 2020-08-03T02:39:11.527Z
 title: What About A Band Called
 tags:
@@ -15,19 +16,33 @@ shortDesc: A place to share and rank ideas for band names, and my first real
   full-stack application. This was a lot of fun to put together, and a great
   learning experience.
 description: >-
-  You'd think that when musicians gather together to talk about their trade,
-  they might be talking about their favorite records, sharing chord voicings, or
-  talking about vintage equipment. You'd be wrong. They are all sitting around
-  saying "what about a band called" followed by a horrible pun. I would know—I
-  have a degree in music, and this is the most prized skill of all.  
-    
-  My objective was to create a place where it could be settled (and unsettled) who has the worst of the puns, the most esoteric of the references, and—thereby—who is the greatest musician. Users are able to sort submitted band names by a few parameters, and can make an account to submit their own, and vote on others'.  
-    
-  This was my first full-stack web application, written mostly in TypeScript using React, Redux, Express and MongoDB. More specifically, I made some detours to learn about Redux-Saga, the fantastic Redux Toolkit, Enzyme and Sinon in testing (although much of that functionality was eclipsed with TypeScript and typed variations of other libraries), and Mongoose (ultimately Typegoose to take advantage of TypeScript) for interaction with the database.
+  My first non-trivial, full-stack web application, What About A Band Called was
+  a great learning experience for me. My minimum viable product was to allow
+  users to create accounts, submit names, vote on names, and have a variety of
+  sorting options to see those names. The functionality isn't anything
+  ground-breaking, but really getting my hands dirty with all of the
+  technologies and frameworks was invaluable:
+
+
+  **React** was my choice of front-end frameworks. I began by using the lifecycle methods, but about halfway through development I caught a glimpse of **React Hooks**, and ultimately refactored all the components to use them.
+
+
+  Moving towards the backend, I used **React-Redux** to do all of my state management, and **Redux-Saga** middleware to help with asynchronicity. Working with sagas (to me) is great—after getting over the learning curve and getting more familiar with generator functions, I think it's let me write much more efficient code, and more easily testable code.
+
+
+  Speaking of testing, I used **Mocha**, **Chai**, **Enzyme**, and **Sinon** to write some tests. Actually, I ended up writing a [bunch](https://github.com/gusbmurphy/what-about-a-band-called/commit/d094f3f4c1631dce46cab08dc11130ffe4e228ab) of unit tests. However, my failure to stop switching around technologies lead me to eventually move the whole project over to **TypeScript**. Paired with the incredible **Redux Toolkit**, I ended up making all of those precious unit tests obsolete. In it's current state, however, the application doesn't have any meaningful testing (a yikes that I'll hopefully get around to un-yikesing).
+
+
+  On the other side of the application is a **NodeJS** server using **Express**, communicating with a **MongoDB** database. I ended up trying to see how much I could get out of **Mongoose**, and eventually started using **Typegoose**—a great library that (paired with Typescript), does a fantastic job of getting close to (maybe achieving? I'm not smart) immutable data types. Again, there were a lot of unit tests I had written earlier that ended up being rendered useless with the implementation of this typing.
+
+
+  Finally, it's all deployed on **Heroku**. I also made a conscious decision to not begin with Create React App, or something similar. I really wanted to work through the necessary development environment setup with **Webpack**, **Babel**, and **ESLint**, because I knew it would be pretty easy for me to not pay any attention to them if they were already working fine! I really got to challenge myself by repeatedly breaking everything by trying multiple times to move everything over to Typescript.
+
+
+  The project is still on going—I'd like to make it look pretty and so boilerplate-y. With any luck, I'll actually keep working on it!
 previewImage:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1596425098/personal-site/Kapture_2020-08-02_at_22.22.44_plorcx.gif
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1596425098/personal-site/Kapture_2020-08-02_at_22.22.44_plorcx.gif
 templateKey: work
-backBurner: false
 ---
