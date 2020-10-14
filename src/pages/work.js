@@ -28,7 +28,7 @@ const WorkItem = ({ post }) => {
       </div>
       <div className={styles.descriptionContainer}>
         <h3>
-          <Link to={post.fields.slug}>{post.frontmatter.title}</Link> {post.frontmatter.backBurner && <span className={styles.wip}>&#40;WIP&#41;</span>}
+          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </h3>
         <div>{tags}</div>
         {post.frontmatter.date}
@@ -47,14 +47,18 @@ const WorkPage = ({
   },
 }) => {
   let works = []
+  let wips = []
   allMarkdown.forEach(markdown => {
     const workItem = <WorkItem key={markdown.node.id} post={markdown.node} />
-    works.push(workItem)
+    if (markdown.node.frontmatter.backBurner) wips.push(workItem)
+    else works.push(workItem)
   })
 
   return (
     <div style={{ textAlign: `center` }}>
       <div className={styles.mainContainer}>{works}</div>
+      <div className={styles.wipWarning}><h3>Entering the WIP Zone</h3><p>Please be kind.</p></div>
+      <div className={styles.mainContainer}>{wips}</div>
     </div>
   )
 }

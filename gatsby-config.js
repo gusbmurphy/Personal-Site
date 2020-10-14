@@ -40,5 +40,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gus Murphy`,
+        icon: `static/assets/favicon2.png`,
+      }
+    }
   ],
 }
