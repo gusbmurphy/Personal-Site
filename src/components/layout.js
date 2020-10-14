@@ -77,6 +77,9 @@ class Layout extends React.Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Gus Murphy</title>
+          <script src="https://kit.fontawesome.com/1e86353b71.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+          </link>
         </Helmet>
         <Menu />
         <div className={styles.pageContainer}>
