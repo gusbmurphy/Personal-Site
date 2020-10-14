@@ -1,10 +1,17 @@
 ---
+backBurner: false
 date: 2020-09-04T21:22:54.596Z
 title: This Website
 tags:
   - Gatsby
   - React
   - Pts.js
+faIcons:
+  - name: fab fa-unity
+    description: Unity
+devicons:
+  - name: devicon-csharp-plain
+    description: C#
 links:
   - display: GitHub
     url: https://github.com/gusbmurphy/Personal-Site
@@ -23,5 +30,4 @@ previewImage:
 imageGallery:
   - https://res.cloudinary.com/dtc0i7udk/image/upload/v1599254922/Kapture_2020-09-04_at_16.20.18_xlwhwh.gif
 templateKey: work
-backBurner: false
 ---
