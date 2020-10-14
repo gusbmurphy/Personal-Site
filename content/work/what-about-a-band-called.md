@@ -7,6 +7,11 @@ tags:
   - Redux
   - Express
   - MongoDB
+faIcons:
+  - name: node-js
+    description: NodeJS
+  - name: unity
+    description: Unity
 devicons:
   - name: devicon-express-original
     description: Express
@@ -20,12 +25,6 @@ devicons:
     description: Webpack
   - name: devicon-bootstrap-plain
     description: Bootstrap
-faIcons:
-  - name:
-  - name: node-js
-    description: NodeJS
-  - name: unity
-    description: Unity
 links:
   - display: whataboutabandcalled.com
     url: https://whataboutabandcalled.com/
