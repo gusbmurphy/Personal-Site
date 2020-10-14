@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 const WorkItem = ({ post }) => {
+  console.log(post)
   let tags = ""
   post.frontmatter.tags.forEach((tag, index) => {
     tags += tag
@@ -20,23 +21,23 @@ const WorkItem = ({ post }) => {
 
   let icons = []
 
-  const Devicon = ({ name, description }) => {
-    return <i className={name} title={description}></i>
-  }
-  post.frontmatter.devicons.map(devicon =>
-    icons.push(
-      <Devicon name={devicon.name} description={devicon.description} />
-    )
-  )
+  // const Devicon = ({ name, description }) => {
+  //   return <i className={name} title={description}></i>
+  // }
+  // post.frontmatter.devicons.map(devicon =>
+  //   icons.push(
+  //     <Devicon name={devicon.name} description={devicon.description} />
+  //   )
+  // )
 
-  const FAIcon = ({ name, description }) => {
-    return <i className={name} title={description}></i>
-  }
-  post.frontmatter.faIcons.map(faIcon =>
-    icons.push(
-      <FAIcon name={faIcon.name} description={faIcon.description} />
-    )
-  )
+  // const FAIcon = ({ name, description }) => {
+  //   return <i className={name} title={description}></i>
+  // }
+  // post.frontmatter.faIcons.map(faIcon =>
+  //   icons.push(
+  //     <FAIcon name={faIcon.name} description={faIcon.description} />
+  //   )
+  // )
 
   let image = post.frontmatter.previewImage
   return (
