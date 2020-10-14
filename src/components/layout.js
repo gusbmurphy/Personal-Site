@@ -5,6 +5,7 @@ import { FaCodepen, FaGithub, FaTwitter } from "react-icons/fa"
 // TODO: Consolidate all the CSS! (From modules, and from typography.js)
 import styles from "../styles/layout.module.css"
 import ColorScheme from "../utils/colorscheme"
+import { Helmet } from "react-helmet"
 
 const artLoader = () => import("./bg-art")
 const Art = ReactDynamicComponent({
@@ -73,6 +74,10 @@ class Layout extends React.Component {
   render() {
     return (
       <div style={{ width: `100%`, height: `100%`, margin: `auto` }}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Gus Murphy</title>
+        </Helmet>
         <Menu />
         <div className={styles.pageContainer}>
           <div className={styles.content}>{this.props.children}</div>
