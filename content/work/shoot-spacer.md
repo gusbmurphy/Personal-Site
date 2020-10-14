@@ -6,6 +6,12 @@ tags:
   - Unity
   - C#
   - Blender
+devicons:
+  - name: devicon-csharp-plain
+    description: C#
+faIcons:
+  - name: unity
+    description: Unity
 links:
   - display: GitHub
     url: https://github.com/gusbmurphy/Shoot-Spacer

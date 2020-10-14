@@ -32,6 +32,20 @@ collections:
       - { name: date, label: Date, widget: date, dateFormat: "MM.YYYY" }
       - { name: title, label: Title }
       - { name: tags, label: Tags, widget: "list" }
+      - name: faIcons
+        label: FA Icons
+        required: false
+        widget: "list"
+        fields:
+          - { label: FA Name, name: name, widget: string }
+          - { label: Description, name: description, widget: string }
+      - name: devicons
+        label: Devicons
+        required: false
+        widget: "list"
+        fields:
+          - { label: Devicon Name, name: name, widget: string }
+          - { label: Description, name: description, widget: string }
       - name: links
         label: Links
         widget: "list"

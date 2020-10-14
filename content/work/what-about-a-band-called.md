@@ -7,6 +7,25 @@ tags:
   - Redux
   - Express
   - MongoDB
+devicons:
+  - name: devicon-express-original
+    description: Express
+  - name: devicon-mongodb-plain
+    description: MongoDB
+  - name: devicon-typescript-plain
+    description: TypeScript
+  - name: devicon-babel-plain
+    description: Babel
+  - name: devicon-webpack-plain
+    description: Webpack
+  - name: devicon-bootstrap-plain
+    description: Bootstrap
+faIcons:
+  - name:
+  - name: node-js
+    description: NodeJS
+  - name: unity
+    description: Unity
 links:
   - display: whataboutabandcalled.com
     url: https://whataboutabandcalled.com/
