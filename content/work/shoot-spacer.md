@@ -10,7 +10,7 @@ devicons:
   - name: devicon-csharp-plain
     description: C#
 faIcons:
-  - name: unity
+  - name: fab fa-unity
     description: Unity
 links:
   - display: GitHub

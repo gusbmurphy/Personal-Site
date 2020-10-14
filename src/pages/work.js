@@ -18,6 +18,26 @@ const WorkItem = ({ post }) => {
     </li>
   ))
 
+  let icons = []
+
+  const Devicon = ({ name, description }) => {
+    return <i className={name} title={description}></i>
+  }
+  post.frontmatter.devicons.map(devicon =>
+    icons.push(
+      <Devicon name={devicon.name} description={devicon.description} />
+    )
+  )
+
+  const FAIcon = ({ name, description }) => {
+    return <i className={name} title={description}></i>
+  }
+  post.frontmatter.faIcons.map(faIcon =>
+    icons.push(
+      <FAIcon name={faIcon.name} description={faIcon.description} />
+    )
+  )
+
   let image = post.frontmatter.previewImage
   return (
     <div className={styles.individualContainer}>
@@ -31,6 +51,7 @@ const WorkItem = ({ post }) => {
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </h3>
         <div>{tags}</div>
+        <div>{icons}</div>
         {post.frontmatter.date}
         <br></br>
         <ul className={styles.links}>{links}</ul>
@@ -57,7 +78,10 @@ const WorkPage = ({
   return (
     <div style={{ textAlign: `center` }}>
       <div className={styles.mainContainer}>{works}</div>
-      <div className={styles.wipWarning}><h3>Entering the WIP Zone</h3><p>Please be kind.</p></div>
+      <div className={styles.wipWarning}>
+        <h3>Entering the WIP Zone</h3>
+        <p>Please be kind.</p>
+      </div>
       <div className={styles.mainContainer}>{wips}</div>
     </div>
   )
