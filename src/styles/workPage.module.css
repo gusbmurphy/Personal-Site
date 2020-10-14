@@ -47,3 +47,10 @@
 .description ul > li:not(:last-child) {
   margin-bottom: 0.6em;
 }
+
+/* For mobile windows */
+@media (max-width: 599px) {
+  .description ul {
+    padding: 0 1em;
+  }
+}

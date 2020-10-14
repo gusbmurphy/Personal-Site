@@ -20,22 +20,22 @@ const WorkItem = ({ post }) => {
 
   let image = post.frontmatter.previewImage
   return (
-    <div className={styles.workGridItem}>
-      <Link to={post.fields.slug} className={styles.workGridItemImg}>
-        <img src={image} />
-      </Link>
-      <div className={styles.workGridItemInfo}>
+    <div className={styles.individualContainer}>
+      <div className={styles.imageContainer}>
+        <Link to={post.fields.slug}>
+          <img src={image} />
+        </Link>
+      </div>
+      <div className={styles.descriptionContainer}>
         <h3>
-          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+          <Link to={post.fields.slug}>{post.frontmatter.title}</Link> {post.frontmatter.backBurner && <span className={styles.wip}>&#40;WIP&#41;</span>}
         </h3>
         <div>{tags}</div>
         {post.frontmatter.date}
         <br></br>
-        <ul className={styles.linksCollection}>{links}</ul>
+        <ul className={styles.links}>{links}</ul>
         <br></br>
-        <div className={styles.workGridItemDesc}>
-          {post.frontmatter.shortDesc}
-        </div>
+        {post.frontmatter.shortDesc}
       </div>
     </div>
   )
@@ -46,19 +46,15 @@ const WorkPage = ({
     allMarkdownRemark: { edges: allMarkdown },
   },
 }) => {
-  let works = [];
-  let worksInProgress = [];
+  let works = []
   allMarkdown.forEach(markdown => {
     const workItem = <WorkItem key={markdown.node.id} post={markdown.node} />
-    if (markdown.node.frontmatter.backBurner) worksInProgress.push(workItem)
-    else works.push(workItem)
+    works.push(workItem)
   })
 
   return (
     <div style={{ textAlign: `center` }}>
-      <div className={styles.workGrid}>{works}</div>
-      <h1 className={styles.backBurnerHeader}>On the back burner... ♨️♨️♨️</h1>
-      <div className={styles.workGrid}>{worksInProgress}</div>
+      <div className={styles.mainContainer}>{works}</div>
     </div>
   )
 }

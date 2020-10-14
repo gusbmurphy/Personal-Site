@@ -1,134 +1,76 @@
-.title {
-  color: black;
-}
-
-.backBurnerHeader {
-  text-align: left;
-  border-bottom: 1px solid black;
-  padding-bottom: 5px;
-  margin-top: 0.67em;
-  font-size: 1.5rem;
-}
-
-.workTitle h3 {
-  margin-top: 0;
-}
-
-.workContainer {
-  display: inline-block;
-  margin: auto;
-}
-
-.workGrid {
+.mainContainer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.workGridItem {
-  /* min-width: 100px;
-  max-width: 400px; */
+.individualContainer {
   min-height: 200px;
-  /* height: 100%; */
   width: 100%;
   position: relative;
   text-align: left;
   display: flex;
-  /* grid-template-columns: 2fr 3fr; */
-  padding: 1em 0;
 }
+.individualContainer:not(:last-child) {
+  padding-bottom: 2em;
 
-.workGridItem:nth-child(even) {
-  flex-direction: row-reverse;
 }
-
-.workGridItem h3 {
+.individualContainer h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.workGridItem:not(:first-of-type) {
-  border-top: 1px dotted black;
+.imageContainer {
+  flex: 2;
 }
-
-.workGridItemDesc {
-  text-align: left;
-}
-
-.workGridItemInfo {
-  text-align: left;
-  flex-grow: 1;
-  padding: 0 1em;
-}
-
-.tagsCollection {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-.tag {
-  text-transform: capitalize;
-}
-
-.linksCollection {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.workGridItem img {
+.imageContainer img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   filter: grayscale(100%);
 }
-
-.workGridItem img:hover {
+.imageContainer img:hover {
   filter: none;
 }
 
-.workItemTransparency {
-  height: 100%;
-  width: 100%;
-  background: #0009ff;
-  position: absolute;
-  top: 1em;
-  left: 1em;
-  z-index: 10;
-  mix-blend-mode: screen;
+.descriptionContainer {
+  text-align: left;
+  flex: 3;
+  padding-left: 2em;
 }
-
-.workGridItem a {
+.descriptionContainer a {
   text-decoration: underline;
 }
 
-.meta {
-  margin-top: 0px;
+.links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
-.contentSummary {
-  text-align: center;
-  margin-top: -2em;
-  margin-bottom: 3em;
+.wip {
+  color: red
 }
 
 /* For smaller windows */
 @media (max-width: 1099px) {
-  .workGrid {
+  .mainContainer {
     margin: auto;
   }
 }
 
 /* For mobile windows */
 @media (max-width: 599px) {
-  .workGridItem {
+  .individualContainer {
     flex-direction: column;
   }
-  .workGridItem:nth-child(even) {
+
+  .mainContainer:nth-child(even) {
     flex-direction: column;
   }
-  .workGridItemInfo {
+
+  .descriptionContainer {
     padding-top: 1em;
     padding-left: 0;
     padding-right: 0;

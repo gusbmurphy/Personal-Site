@@ -27,7 +27,7 @@ const Menu = () => (
       </div>
       <Link to="/work">Work</Link>
     </div>
-    <div className={styles.menuRight}>
+    {/* <div className={styles.menuRight}>
       <div className={styles.icons}>
         <a
           href="https://github.com/gusbmurphy"
@@ -48,7 +48,7 @@ const Menu = () => (
           </div>
         </a>
       </div>
-    </div>
+    </div> */}
     {/* <div className={styles.nav}>
       <ul>
         <ListLink to="/work/">Work</ListLink>
