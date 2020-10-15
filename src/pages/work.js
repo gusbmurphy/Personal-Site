@@ -3,11 +3,11 @@ import styles from "../styles/work.module.css"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-const Devicon = ({ name, description }) => {
+export const Devicon = ({ name, description, id }) => {
   return <i className={name} title={description}></i>
 }
 
-const FAIcon = ({ name, description }) => {
+export const FAIcon = ({ name, description, id }) => {
   return <i className={name} title={description}></i>
 }
 
@@ -31,35 +31,53 @@ const WorkItem = ({ post }) => {
   if (post.frontmatter.devicons) {
     post.frontmatter.devicons.map(devicon =>
       icons.push(
-        <Devicon name={devicon.name} description={devicon.description} />
+        <Devicon
+          name={devicon.name}
+          description={devicon.description}
+          id={devicon.name + post.id}
+        />
       )
     )
   }
   if (post.frontmatter.faIcons) {
     post.frontmatter.faIcons.map(faIcon =>
-      icons.push(<FAIcon name={faIcon.name} description={faIcon.description} />)
+      icons.push(
+        <FAIcon
+          name={faIcon.name}
+          description={faIcon.description}
+          id={faIcon.name + post.id}
+        />
+      )
     )
   }
+
+  console.log("icons: ", icons)
 
   let image = post.frontmatter.previewImage
   return (
     <div className={styles.individualContainer}>
-      <div className={styles.imageContainer}>
-        <Link to={post.fields.slug}>
-          <img src={image} />
-        </Link>
-      </div>
-      <div className={styles.descriptionContainer}>
-        <h3>
-          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-        </h3>
-        <div>{tags}</div>
-        <div>{icons}</div>
-        {post.frontmatter.date}
-        <br></br>
-        <ul className={styles.links}>{links}</ul>
-        <br></br>
-        {post.frontmatter.shortDesc}
+      <h3>
+        <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+        {post.frontmatter.backBurner && (
+          <span className={styles.wipWarning}>
+            &nbsp;&#40;work in progress&#41;
+          </span>
+        )}
+      </h3>
+      <div className={styles.imageDescContainer}>
+        <div className={styles.imageContainer}>
+          <Link to={post.fields.slug}>
+            <img src={image} />
+          </Link>
+        </div>
+        <div className={styles.descriptionContainer}>
+          <div className={styles.icons}>{icons}</div>
+          {post.frontmatter.date}
+          <br></br>
+          <ul className={styles.links}>{links}</ul>
+          <br></br>
+          {post.frontmatter.shortDesc}
+        </div>
       </div>
     </div>
   )
@@ -81,10 +99,6 @@ const WorkPage = ({
   return (
     <div style={{ textAlign: `center` }}>
       <div className={styles.mainContainer}>{works}</div>
-      <div className={styles.wipWarning}>
-        <h3>Entering the WIP Zone</h3>
-        <p>Please be kind.</p>
-      </div>
       <div className={styles.mainContainer}>{wips}</div>
     </div>
   )

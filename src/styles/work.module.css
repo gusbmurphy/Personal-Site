@@ -1,3 +1,4 @@
+/* The main container holds all of the individual entries */
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -5,20 +6,31 @@
   justify-content: center;
 }
 
+/* Each entry is within an individual container, which stacks the title over both the description and image */
 .individualContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+.individualContainer h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: larger;
+  text-align: left;
+}
+.individualContainer h3 > a {
+  text-decoration: none;
+}
+
+/* This container holds the image and description in a row */
+.imageDescContainer {
   min-height: 200px;
   width: 100%;
   position: relative;
   text-align: left;
   display: flex;
 }
-.individualContainer:not(:last-child) {
+.imageDescContainer:not(:last-child) {
   padding-bottom: 2em;
-
-}
-.individualContainer h3 {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .imageContainer {
@@ -43,6 +55,13 @@
   text-decoration: underline;
 }
 
+.icons {
+  font-size: 1.5em;
+}
+.icons i {
+  margin-right: 0.2em;
+}
+
 .links {
   list-style: none;
   padding-left: 0;
@@ -50,17 +69,10 @@
 }
 
 .wipWarning {
-  margin: 2em 0;
-  color: red;
-}
-.wipWarning h3 {
-  font-weight: bold;
-  margin-bottom: 0;
-}
-.wipWarning p {
   font-size: smaller;
+  font-weight: lighter;
+  font-style: italic;
 }
-
 /* For smaller windows */
 @media (max-width: 1099px) {
   .mainContainer {
@@ -70,7 +82,7 @@
 
 /* For mobile windows */
 @media (max-width: 599px) {
-  .individualContainer {
+  .imageDescContainer {
     flex-direction: column;
   }
 

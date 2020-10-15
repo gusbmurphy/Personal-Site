@@ -1,42 +1,63 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import styles from "../styles/workPage.module.css"
-import Img from "gatsby-image"
 import ReactMarkdown from "react-markdown/with-html"
+import { FAIcon, Devicon } from "../pages/work"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
-  // let tags = frontmatter.tags.map(tag => (
-  //   <p className={styles.tag}>{tag}</p>
-  // ))
-  let tags = ""
-  frontmatter.tags.forEach((tag, index) => {
-    tags += tag
-    if (index != (frontmatter.tags.length - 1)) tags += " / "
-  })
+  const { frontmatter } = markdownRemark
+
+  let icons = []
+  if (frontmatter.devicons) {
+    frontmatter.devicons.map(devicon =>
+      icons.push(
+        <Devicon
+          name={devicon.name}
+          description={devicon.description}
+          id={devicon.name + markdownRemark.id}
+        />
+      )
+    )
+  }
+  if (frontmatter.faIcons) {
+    frontmatter.faIcons.map(faIcon =>
+      icons.push(
+        <FAIcon
+          name={faIcon.name}
+          description={faIcon.description}
+          id={faIcon.name + markdownRemark.id}
+        />
+      )
+    )
+  }
+
   let images = frontmatter.imageGallery.map(image => (
-    <img src={image} />
+    <img src={image} key={image + markdownRemark.id} />
   ))
+
   let links = frontmatter.links.map(link => (
-    <li>
-      <a target="_blank" rel="noopener noreferrer" href={link.url}>{link.display}</a>
+    <li key={link.display + markdownRemark.id}>
+      <a target="_blank" rel="noopener noreferrer" href={link.url}>
+        {link.display}
+      </a>
     </li>
   ))
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.text}>
         <h1 className={styles.title}>{frontmatter.title}</h1>
-        <div>{tags}</div>
-        <div>{frontmatter.date}</div>
+        <div className={styles.icons}>{icons}</div>
+        <div className={styles.date}>{frontmatter.date}</div>
         <ul className={styles.linkList}>{links}</ul>
-        <br/><p className={styles.description}><ReactMarkdown source={frontmatter.description}/></p>
+        <p className={styles.description}>
+          <ReactMarkdown source={frontmatter.description} />
+        </p>
       </div>
-      <div className={styles.media}>
-        {images}
-      </div>
+      <div className={styles.media}>{images}</div>
     </div>
   )
 }
@@ -47,7 +68,7 @@ export const pageQuery = graphql`
       fields: { slug: { eq: $slug } }
       frontmatter: { templateKey: { eq: "work" } }
     ) {
-      html
+      id
       frontmatter {
         date(formatString: "MMMM, YYYY")
         title
@@ -58,16 +79,15 @@ export const pageQuery = graphql`
           display
           url
         }
+        devicons {
+          name
+          description
+        }
+        faIcons {
+          name
+          description
+        }
       }
     }
   }
 `
-
-
-// file(relativePath: {eq: "google-game-builder.jpg"}) {
-//   childImageSharp {
-//     fluid {
-//       ...GatsbyImageSharpFluid
-//     }
-//   }
-// }
