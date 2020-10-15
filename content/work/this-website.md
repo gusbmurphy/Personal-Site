@@ -7,11 +7,11 @@ tags:
   - React
   - Pts.js
 faIcons:
-  - name: fab fa-unity
-    description: Unity
+  - name: fab fa-js
+    description: JavaScript
 devicons:
-  - name: devicon-csharp-plain
-    description: C#
+  - name: devicon-css3-plain
+    description: CSS
 links:
   - display: GitHub
     url: https://github.com/gusbmurphy/Personal-Site
