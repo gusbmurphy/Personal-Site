@@ -30,6 +30,9 @@
 .icons {
   font-size: 2em;
 }
+.icons i {
+  margin-right: 0.2em;
+}
 .tag {
   text-transform: capitalize;
 }
