@@ -16,9 +16,9 @@ links:
     url: https://github.com/gusbmurphy/Moon-Shot
   - display: itch.io
     url: https://gbmurphy.itch.io/moon-shot
-shortDesc: My submission to the 2020 GitHub Game Off, built in 30 days in
-  collaboration with my friend Nick Allen, with music by another friend Ridley
-  Tankersley.
+shortDesc: My submission to the 2020 GitHub Game Off (ranked 224th of 501 total
+  entries), built in 30 days in collaboration with my friend Nick Allen, with
+  music by another friend Ridley Tankersley.
 description: >-
   This was a great deal of fun to work on, and such a fruitful learning
   experience. The Game Off is a yearly competition where participants are given
