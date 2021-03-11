@@ -6,7 +6,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode, basePath: `pages` })
-    console.log(`Creating node with path ${value}, title: ${node.frontmatter.title}, templateKey: ${node.frontmatter.templateKey}`)
+    console.log(
+      `Creating node with path ${value}, title: ${node.frontmatter.title}, templateKey: ${node.frontmatter.templateKey}`
+    )
     createNodeField({
       node,
       name: `slug`,
@@ -44,7 +46,9 @@ exports.createPages = async ({ graphql, actions }) => {
     posts.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/templates/${String(node.frontmatter.templateKey)}Template.js`),
+        component: path.resolve(
+          `./src/templates/${String(node.frontmatter.templateKey)}Template.js`
+        ),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
@@ -63,8 +67,8 @@ function onCreateBabelConfig({ actions }) {
   actions.setBabelPreset({
     name: `@babel/preset-typescript`,
     options: {
-       isTSX: true,
-       allExtensions: true,
+      isTSX: true,
+      allExtensions: true,
     },
   })
 }
@@ -77,6 +81,14 @@ function onCreateWebpackConfig({ actions, loaders }) {
   }
 
   actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        path: require.resolve("path-browserify"),
+      },
+      fallback: {
+        fs: false,
+      },
+    },
     module: {
       rules: [
         {
