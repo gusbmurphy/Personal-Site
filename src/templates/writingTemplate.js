@@ -1,15 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styles from "../styles/writings.module.css"
+import * as styles from "../styles/writings.module.css"
 import Text from "../components/text.js"
 
-export default function Template({
+function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
-  let tags = frontmatter.tags.map(tag => (
-    <span className={styles.tag}>{tag}</span>
+  let tags = frontmatter.tags.map((tag, i) => (
+    <span className={styles.tag} key={i}>{tag}</span>
   ))
   return (
     <Text>
@@ -28,6 +28,8 @@ export default function Template({
     </Text>
   )
 }
+
+export default Template
 
 export const pageQuery = graphql`
   query WritingByID($slug: String!) {

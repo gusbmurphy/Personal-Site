@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/work.module.css"
+import * as styles from "../styles/work.module.css"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { Devicon } from "../components/Devicon"
@@ -7,11 +7,11 @@ import { FAIcon } from "../components/FAIcon"
 
 const WorkItem = ({ post }) => {
   console.log(post)
-  let tags = ""
-  post.frontmatter.tags.forEach((tag, index) => {
-    tags += tag
-    if (index != post.frontmatter.tags.length - 1) tags += " / "
-  })
+  // let tags = ""
+  // post.frontmatter.tags.forEach((tag, index) => {
+  //   tags += tag
+  //   if (index != post.frontmatter.tags.length - 1) tags += " / "
+  // })
 
   let links = post.frontmatter.links.map(link => (
     <li key={link.url}>
@@ -82,6 +82,8 @@ const WorkPage = ({
     allMarkdownRemark: { edges: allMarkdown },
   },
 }) => {
+  console.log(allMarkdown)
+  console.log('hello!')
   let works = []
   let wips = []
   allMarkdown.forEach(markdown => {
@@ -97,6 +99,7 @@ const WorkPage = ({
     </div>
   )
 }
+
 export default WorkPage
 
 export const pageQuery = graphql`

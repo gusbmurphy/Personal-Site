@@ -1,6 +1,6 @@
 import React from "react"
 import Text from "../components/text"
-import styles from "../styles/writings.module.css"
+import * as styles from "../styles/writings.module.css"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
@@ -13,13 +13,14 @@ const PostLink = ({ post }) => {
   return (
     <div>
       <li>
-        <Link to={post.fields.slug}>{post.frontmatter.title}</Link> ({post.frontmatter.date}){tags}
+        <Link to={post.fields.slug}>{post.frontmatter.title}</Link> (
+        {post.frontmatter.date}){tags}
       </li>
     </div>
   )
 }
 
-export default ({
+const Writings = ({
   data: {
     allMarkdownRemark: { edges },
   },
@@ -39,6 +40,8 @@ export default ({
     </Text>
   )
 }
+
+export default Writings;
 
 export const pageQuery = graphql`
   query {
