@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(
-          `./src/templates/${String(node.frontmatter.templateKey)}Template.js`
+          `./src/templates/${String(node.frontmatter.templateKey)}-template.js`
         ),
         context: {
           // Data passed to context is available
