@@ -2,14 +2,8 @@ import React from "react"
 import styles from "../styles/work.module.css"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
-
-export const Devicon = ({ name, description, id }) => {
-  return <i className={name} title={description}></i>
-}
-
-export const FAIcon = ({ name, description, id }) => {
-  return <i className={name} title={description}></i>
-}
+import { Devicon } from "../components/Devicon"
+import { FAIcon } from "../components/FAIcon"
 
 const WorkItem = ({ post }) => {
   console.log(post)

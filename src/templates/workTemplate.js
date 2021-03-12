@@ -2,7 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import styles from "../styles/workPage.module.css"
 import ReactMarkdown from "react-markdown/with-html"
-import { FAIcon, Devicon } from "../pages/work"
+import { FAIcon } from "../components/FAIcon"
+import { Devicon } from "../components/Devicon"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
