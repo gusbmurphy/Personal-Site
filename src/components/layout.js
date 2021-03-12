@@ -1,15 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
-import ReactDynamicComponent from "react-dynamic-import"
 // TODO: Consolidate all the CSS! (From modules, and from typography.js)
 import * as styles from "../styles/layout.module.css"
-import ColorScheme from "../utils/colorscheme"
 import { Helmet } from "react-helmet"
-
-const artLoader = () => import("./bg-art")
-const Art = ReactDynamicComponent({
-  loader: artLoader,
-})
 
 const Menu = () => (
   <div className={styles.menu}>
@@ -48,14 +41,6 @@ class Layout extends React.Component {
         <Menu />
         <div className={styles.pageContainer}>
           <div className={styles.content}>{this.props.children}</div>
-        </div>
-        <div className={styles.bgArt}>
-          <Art
-            name="pts_anim"
-            background={ColorScheme.background}
-            pause="false"
-            style={{ height: "100%" }}
-          />
         </div>
       </div>
     )
