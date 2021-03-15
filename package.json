@@ -53,6 +53,7 @@
     "react-typography": "^0.16.19",
     "remarkable": "^2.0.1",
     "requirejs": "^2.3.6",
+    "styled-components": "^5.2.1",
     "typography": "^0.16.19",
     "typography-theme-github": "^0.16.19",
     "webfontloader": "^1.6.28"
