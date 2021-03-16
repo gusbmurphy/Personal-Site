@@ -3,6 +3,14 @@ require('dotenv').config();
 module.exports = {
   plugins: [
     {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule : {
+          include: `${__dirname}/static/assets`,
+        }
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
