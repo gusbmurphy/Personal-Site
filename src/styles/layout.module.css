@@ -10,46 +10,18 @@
 /* Menu */
 .menu {
   font-size: larger;
-  width: 100%;
+  width: 500px;
   z-index: 1;
   display: flex;
-  position: sticky;
+  position: absolute;
+  flex-direction: column;
   top: 0;
   vertical-align: text-top;
-  align-items: center;
-  height: 3em;
+  align-items: left;
+  height: 100vh;
 }
-.menuLeft {
-  /* flex: 1; */
-  display: flex;
-  justify-content: flex-start;
-}
-.menuLeft > * {
-  padding-right: 1rem;
-}
-.menuRight {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-.menu a {
-  text-decoration: none;
-  color: black;
-}
-.menu a:visited {
-  color: black;
-}
-.menu a:active {
-  color: #35d0ba;
-}
-.menu a:hover {
-  color: #d92027;
-}
-
 .name {
   font-weight: bolder;
-  flex-grow: 1;
-  /* padding-left: 1em; */
 }
 .icons, .icons a > div {
   display: flex;
@@ -79,154 +51,3 @@
   margin-top: -2em;
   margin-bottom: 3em;
 }
-
-/* For larger windows */
-/* @media (min-width: 1100px) {
-  .mainGrid {
-    margin: auto;
-    width: 80%;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: repeat(3, auto);
-  }
-} */
-
-/* For smaller windows */
-
-@media (max-width: 999px) {
-  /* .menu {
-    text-align: center;
-    flex-direction: column;
-  }
-  .menu > div {
-    flex-basis: 0;
-  } */
-  .nav {
-    width: 60%;
-    margin: auto;
-    padding-right: 0;
-  }
-  .nav a {
-    margin: 0.2em;
-  }
-  .links {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    padding-right: 0;
-  }
-  .links > div {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-  }
-  .name {
-    padding-left: 0;
-  }
-  .content {
-    width: 100%;
-    /* padding-top: 4em; */
-    /* margin-top: 120px; */
-  }
-  .contentSummary {
-  }
-}
-
-/* For smaller windows */
-/* @media (max-width: 1099px) {
-  .content {
-    margin: auto;
-    width: 80%;
-  }
-  .menu {
-    text-align: left;
-    width: 80%;
-    margin: auto;
-  }
-  .name {
-    margin-top: 0.6em;
-    color: var(--background-color);
-    border-bottom: 1px solid var(--background-color);
-  }
-  .menu a {
-    color: var(--background-color);
-  }
-  .links ul {
-    margin-left: 0px;
-    text-align: center;
-    display: flex;
-  }
-  .links li {
-    display: inline;
-    flex: auto;
-  }
-} */
-
-/* Background art container */
-.bgArt {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  width: 100%;
-  height: 100%;
-}
-
-/* Thanks to Ian Lunn for working on this excellent animation from his Hover.css 
-(https://ianlunn.github.io/Hover/) project! */
-.hvrSweepToLeft {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-.hvrSweepToLeft:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: black;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvrSweepToLeft:hover,
-.hvrSweepToLeft:focus,
-.hvrSweepToLeft:active {
-  color: var(--background-color);
-}
-.hvrSweepToLeft:hover:before,
-.hvrSweepToLeft:focus:before,
-.hvrSweepToLeft:active:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
-/* @media (max-width: 1099px) {
-  .hvrSweepToLeft {
-    color: var(--background-color);
-  }
-  .hvrSweepToLeft:before {
-    background: var(--background-color);
-  }
-  .hvrSweepToLeft:hover,
-  .hvrSweepToLeft:focus,
-  .hvrSweepToLeft:active {
-    color: black;
-  }
-} */
