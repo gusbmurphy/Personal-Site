@@ -1,6 +1,5 @@
-import React from "react";
-
+import React from "react"
 
 export const FAIcon = ({ name, description, id }) => {
-  return <i className={name} title={description}></i>;
-};
+  return <i className={name} title={description} aria-hidden></i>
+}
