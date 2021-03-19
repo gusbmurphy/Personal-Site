@@ -1,5 +1,4 @@
 import React from "react"
-// TODO: Consolidate all the CSS! (From modules, and from typography.js)
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import NavPanel, { NavPanelSpacer } from "./NavPanel"
