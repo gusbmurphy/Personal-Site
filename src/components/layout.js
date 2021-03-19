@@ -18,39 +18,26 @@ const PageContent = styled.div`
   margin: 2em;
 `
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      art: null,
-    }
-  }
-
-  render() {
-    return (
-      <MainContainer>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>Gus Murphy</title>
-          <script
-            src="https://kit.fontawesome.com/1e86353b71.js"
-            crossOrigin="anonymous"
-          ></script>
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
-          ></link>
-        </Helmet>
-        <NavPanel />
-        <PageContainer>
-          <NavPanelSpacer />
-          <PageContent>
-            {this.props.children}
-          </PageContent>
-        </PageContainer>
-      </MainContainer>
-    )
-  }
-}
+const Layout = () => (
+  <MainContainer>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Gus Murphy</title>
+      <script
+        src="https://kit.fontawesome.com/1e86353b71.js"
+        crossOrigin="anonymous"
+      ></script>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css"
+      ></link>
+    </Helmet>
+    <NavPanel />
+    <PageContainer>
+      <NavPanelSpacer />
+      <PageContent>{this.props.children}</PageContent>
+    </PageContainer>
+  </MainContainer>
+)
 
 export { Layout as default }
