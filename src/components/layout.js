@@ -18,7 +18,7 @@ const PageContent = styled.div`
   margin: 2em;
 `
 
-const Layout = () => (
+const Layout = (props) => (
   <MainContainer>
     <Helmet>
       <meta charSet="utf-8" />
@@ -35,7 +35,7 @@ const Layout = () => (
     <NavPanel />
     <PageContainer>
       <NavPanelSpacer />
-      <PageContent>{this.props.children}</PageContent>
+      <PageContent>{props.children}</PageContent>
     </PageContainer>
   </MainContainer>
 )
