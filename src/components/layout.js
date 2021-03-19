@@ -14,6 +14,10 @@ const PageContainer = styled.div`
   width: 100%;
   height: 100%;
 `
+const PageContent = styled.div`
+  margin: 2em;
+`
+
 class Layout extends React.Component {
   constructor(props) {
     super(props)
@@ -40,9 +44,9 @@ class Layout extends React.Component {
         <NavPanel />
         <PageContainer>
           <NavPanelSpacer />
-          <div>
-            <div>{this.props.children}</div>
-          </div>
+          <PageContent>
+            {this.props.children}
+          </PageContent>
         </PageContainer>
       </MainContainer>
     )
