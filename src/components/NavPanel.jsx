@@ -3,11 +3,12 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import NameGraphic from "../../static/assets/gmname.svg"
+import { nord1, nord14, nord2, nord6, nord8 } from "../utils/color-scheme"
 
 const NavPanelWidthInVw = 25
 const NavPanelPaddingInEm = 2
 const StyledNavPanel = styled.div`
-  background-color: #eceff4;
+  background-color: ${nord6};
   width: ${NavPanelWidthInVw}vw;
   max-width: 445px;
   min-width: 300px;
@@ -25,12 +26,12 @@ const NavPanelInnerContainer = styled.div`
 
 const StyledNameGraphic = styled(NameGraphic)`
   padding-top: 20%;
-  fill: #88c0d0;
+  fill: ${nord8};
 `
 
 const Tagline = styled.div`
   margin-bottom: 3em;
-  color: #4c566a;
+  color: ${nord1};
   margin-top: 0.2em;
   font-size: 1.1em;
 `
@@ -41,7 +42,7 @@ const LinkSection = styled.div`
 `
 
 const NavLink = styled(Link)`
-  color: #2e3440;
+  color: ${nord2};
   text-decoration: none;
   font-size: 1.55em;
 
@@ -56,7 +57,7 @@ const IconSection = styled.div`
 `
 
 const StyledIconSpan = styled.span`
-  color: #b48ead;
+  color: ${nord14};
   font-size: 2em;
 
   :not(:last-of-type) {
