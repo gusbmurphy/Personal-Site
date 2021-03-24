@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import * as styles from "../styles/work.module.css"
 import { WorkItem } from "../components/WorkItem"
 
@@ -17,8 +18,7 @@ const WorkPage = ({
 
   return (
     <div style={{ textAlign: `center` }}>
-      <div className={styles.mainContainer}>{works}</div>
-      <div className={styles.mainContainer}>{wips}</div>
+      <div className={styles.mainContainer}>{works}{wips}</div>
     </div>
   )
 }
