@@ -25,6 +25,7 @@ const NavPanelInnerContainer = styled.div`
 `
 
 const StyledNameGraphic = styled(NameGraphic)`
+  max-width: 300px;
   padding-top: 20%;
   fill: ${nord8};
 `
@@ -97,7 +98,7 @@ const NavPanel = () => (
 )
 
 export const NavPanelSpacer = styled(StyledNavPanel)`
-  background-color: none;
+  background-color: white;
   position: static;
   padding: 0;
   min-width: calc(${NavPanelWidthInVw}vw + ${NavPanelPaddingInEm * 2}em);
