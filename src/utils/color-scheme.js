@@ -14,4 +14,3 @@ export const nord12 = "#D08770"
 export const nord13 = "#EBCB8B"
 export const nord14 = "#A3BE8C"
 export const nord15 = "#B48EAD"
-
