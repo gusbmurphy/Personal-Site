@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { nord0 } from "../utils/color-scheme"
+import { nord1, nord10 } from "../utils/color-scheme"
 import styled from "styled-components"
 import NavPanel, { NavPanelSpacer } from "./NavPanel"
 
@@ -17,11 +17,17 @@ const PageContainer = styled.div`
 `
 
 const PageContent = styled.div`
-  background-color: ${nord0};
-  padding: 2em;
+  background-color: white;
+  color: ${nord1};
+  padding: 4em;
+  max-width: 560px;
+  box-shadow: inset 25px 0 25px -35px rgb(0 0 0 / 25%);
+  a {
+    color: ${nord10};
+  }
 `
 
-const Layout = (props) => (
+const Layout = props => (
   <MainContainer>
     <Helmet>
       <meta charSet="utf-8" />
