@@ -1,6 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Devicon } from "./Devicon"
 import { FAIcon } from "./FAIcon"
+import * as styles from "../styles/work.module.css"
 
 export const WorkItem = ({ post }) => {
   let links = post.frontmatter.links.map(link => (
