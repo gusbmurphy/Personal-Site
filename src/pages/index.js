@@ -1,30 +1,18 @@
-import React, { useState } from "react"
-import * as styles from "../styles/about.module.css"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
+
+const HeadShot = styled(Img)`
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+`
 
 export default function About() {
-  const [showGus, setShowGus] = useState(false)
-  const [showTc, setShowTc] = useState(false)
-  const [showPizza, setShowPizza] = useState(false)
-
   const data = useStaticQuery(graphql`
     query {
-      heggies: file(relativePath: { eq: "heggies.jpg" }) {
-        childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      me: file(relativePath: { eq: "me.jpg" }) {
-        childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      matts: file(relativePath: { eq: "matts.jpg" }) {
+      file(relativePath: { eq: "me.jpg" }) {
         childImageSharp {
           fixed {
             ...GatsbyImageSharpFixed
@@ -34,63 +22,13 @@ export default function About() {
     }
   `)
 
-  function PictureText({ setShowFunc, children }) {
-    return (
-      <a
-        onMouseEnter={() => setShowFunc(true)}
-        onMouseLeave={() => setShowFunc(false)}
-        // Get positioning for associated image
-        // ref={el => {
-        //   if (!el) return
-        //   const y = el.getBoundingClientRect().bottom
-        //   const x = Math.floor(window.innerWidth / 2)
-        //   setPosFunc({x, y})
-        // }}
-        className={styles.pictureText}
-      >
-        {children}
-      </a>
-    )
-  }
-
-  function BGPicture({ fixed, shouldShow }) {
-    if (shouldShow) {
-      let leftPos = window.innerWidth / 2;
-      return (
-        <Img
-          fixed={fixed}
-          style={{
-            left: leftPos - (100 + Math.random() * 100),
-            bottom: 100,
-            position: "fixed",
-            zIndex: -10,
-            transform: `rotate(${-45 + Math.random() * 90}deg)`
-          }}
-        />
-      )
-    }
-    return null
-  }
-
   return (
     <>
-      <p
-        className={styles.about}
-        // onMouseMove={e => setMousePos({ x: e.clientX, y: e.clientY })}
-      >
-        <PictureText setShowFunc={setShowGus}>
-          Gus Murphy
-        </PictureText>{" "}
-        lives in the{" "}
-        <PictureText setShowFunc={setShowTc}>
-          Twin Cities
-        </PictureText>
-        . He a musician, playing trombone and bass, and knows the{" "}
-        <PictureText setShowFunc={setShowPizza}>
-          correct way to slice pizza
-        </PictureText>
-        . Gus is currently looking for work in web development—you can find him
-        on{" "}
+      <HeadShot fixed={data.file.childImageSharp.fixed} />
+      <p>
+        Gus Murphy lives in the Twin Cities. He is a musician, playing trombone
+        and bass, and knows the correct way to slice pizza. Gus is currently
+        looking for work in web development—you can find him on{" "}
         <a
           href="https://www.linkedin.com/in/augustus-murphy-47b8b8193/"
           target="_blank"
@@ -108,21 +46,6 @@ export default function About() {
         </a>
         .
       </p>
-      <BGPicture
-        shouldShow={showGus}
-        // pos={gusPos}
-        fixed={data.me.childImageSharp.fixed}
-      />
-      <BGPicture
-        shouldShow={showTc}
-        // pos={tcPos}
-        fixed={data.matts.childImageSharp.fixed}
-      />
-      <BGPicture
-        shouldShow={showPizza}
-        // pos={pizzaPos}
-        fixed={data.heggies.childImageSharp.fixed}
-      />
     </>
   )
 }
