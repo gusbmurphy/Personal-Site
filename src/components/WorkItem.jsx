@@ -2,6 +2,21 @@ import React from "react"
 import { Link } from "gatsby"
 import { Devicon } from "./Devicon"
 import { FAIcon } from "./FAIcon"
+import styled from "styled-components"
+
+const MainContainer = styled.div`
+  font-size: 0.85em;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+`
+
+const Description = styled.p`
+  line-height: 1.3em;
+`
 
 export const WorkItem = ({ post }) => {
   let links = post.frontmatter.links.map(link => (
@@ -36,21 +51,18 @@ export const WorkItem = ({ post }) => {
     )
   }
 
-  let image = post.frontmatter.previewImage
   return (
-    <div>
+    <MainContainer>
       <h3>
         <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         {post.frontmatter.backBurner && (
-          <span>
-            &nbsp;&#40;work in progress&#41;
-          </span>
+          <span>&nbsp;&#40;work in progress&#41;</span>
         )}
       </h3>
       <div>
         <div>
           <Link to={post.fields.slug}>
-            <img src={image} />
+            <img src={post.frontmatter.previewImage} />
           </Link>
         </div>
         <div>
@@ -59,9 +71,9 @@ export const WorkItem = ({ post }) => {
           <br></br>
           <ul>{links}</ul>
           <br></br>
-          {post.frontmatter.shortDesc}
+          <Description>{post.frontmatter.shortDesc}</Description>
         </div>
       </div>
-    </div>
+    </MainContainer>
   )
 }
