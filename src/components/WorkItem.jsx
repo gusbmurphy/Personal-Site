@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { Devicon } from "./Devicon"
 import { FAIcon } from "./FAIcon"
-import * as styles from "../styles/work.module.css"
 
 export const WorkItem = ({ post }) => {
   let links = post.frontmatter.links.map(link => (
@@ -39,26 +38,26 @@ export const WorkItem = ({ post }) => {
 
   let image = post.frontmatter.previewImage
   return (
-    <div className={styles.individualContainer}>
+    <div>
       <h3>
         <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         {post.frontmatter.backBurner && (
-          <span className={styles.wipWarning}>
+          <span>
             &nbsp;&#40;work in progress&#41;
           </span>
         )}
       </h3>
-      <div className={styles.imageDescContainer}>
-        <div className={styles.imageContainer}>
+      <div>
+        <div>
           <Link to={post.fields.slug}>
             <img src={image} />
           </Link>
         </div>
-        <div className={styles.descriptionContainer}>
-          <div className={styles.icons}>{icons}</div>
+        <div>
+          <div>{icons}</div>
           {post.frontmatter.date}
           <br></br>
-          <ul className={styles.links}>{links}</ul>
+          <ul>{links}</ul>
           <br></br>
           {post.frontmatter.shortDesc}
         </div>
