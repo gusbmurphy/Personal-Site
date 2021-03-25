@@ -1,7 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
-import * as styles from "../styles/work.module.css"
 import { WorkItem } from "../components/WorkItem"
+import styled from "styled-components"
+
+const WorksContainer = styled.div`
+  max-width: 760px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  & > div {
+    width: 40%;
+  }
+`
 
 const WorkPage = ({
   data: {
@@ -10,6 +21,7 @@ const WorkPage = ({
 }) => {
   let works = []
   let wips = []
+
   allMarkdown.forEach(markdown => {
     const workItem = <WorkItem key={markdown.node.id} post={markdown.node} />
     if (markdown.node.frontmatter.backBurner) wips.push(workItem)
@@ -17,9 +29,10 @@ const WorkPage = ({
   })
 
   return (
-    <div style={{ textAlign: `center` }}>
-      <div className={styles.mainContainer}>{works}{wips}</div>
-    </div>
+    <WorksContainer>
+      {works}
+      {wips}
+    </WorksContainer>
   )
 }
 
