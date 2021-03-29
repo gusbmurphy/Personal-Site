@@ -10,9 +10,13 @@ const Container = styled.div`
 `
 
 const AboutContainer = styled.div`
-  max-width: 560px;
+  max-width: 580px;
   line-height: 1.5em;
   font-size: 1.2em;
+
+  p {
+    text-align: center;
+  }
 `
 
 const HeadShotContainer = styled.div`
