@@ -4,7 +4,6 @@ import { WorkItem } from "../components/WorkItem"
 import styled from "styled-components"
 
 const WorksContainer = styled.div`
-  max-width: 760px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
