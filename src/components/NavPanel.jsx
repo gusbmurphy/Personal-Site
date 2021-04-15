@@ -5,6 +5,36 @@ import styled from "styled-components"
 import NameGraphic from "../../static/assets/gmname.svg"
 import { nord1, nord14, nord2, nord6, nord8 } from "../utils/color-scheme"
 
+const NavPanel = () => (
+  <StyledNavPanel>
+    <NavPanelInnerContainer>
+      <div>
+        <Link to="/">
+          <StyledNameGraphic />
+        </Link>
+        <Tagline>Trombone & Computer</Tagline>
+        <LinkSection>
+          <NavLink to="/work">Work</NavLink>
+          <NavLink to="/">Writing</NavLink>
+        </LinkSection>
+      </div>
+      <div>
+        <IconSection>
+          <StyledIconSpan>
+            <FAIcon name="fa fa-github" />
+          </StyledIconSpan>
+          <StyledIconSpan>
+            <FAIcon name="fa fa-envelope" />
+          </StyledIconSpan>
+          <StyledIconSpan>
+            <FAIcon name="fa fa-linkedin-square" />
+          </StyledIconSpan>
+        </IconSection>
+      </div>
+    </NavPanelInnerContainer>
+  </StyledNavPanel>
+)
+
 const NavPanelWidthInVw = 25
 const NavPanelPaddingInEm = 2
 const StyledNavPanel = styled.div`
@@ -65,36 +95,6 @@ const StyledIconSpan = styled.span`
     margin-right: 0.4em;
   }
 `
-
-const NavPanel = () => (
-  <StyledNavPanel>
-    <NavPanelInnerContainer>
-      <div>
-        <Link to="/">
-          <StyledNameGraphic />
-        </Link>
-        <Tagline>Trombone & Computer</Tagline>
-        <LinkSection>
-          <NavLink to="/work">Work</NavLink>
-          <NavLink to="/">Writing</NavLink>
-        </LinkSection>
-      </div>
-      <div>
-        <IconSection>
-          <StyledIconSpan>
-            <FAIcon name="fa fa-github" />
-          </StyledIconSpan>
-          <StyledIconSpan>
-            <FAIcon name="fa fa-envelope" />
-          </StyledIconSpan>
-          <StyledIconSpan>
-            <FAIcon name="fa fa-linkedin-square" />
-          </StyledIconSpan>
-        </IconSection>
-      </div>
-    </NavPanelInnerContainer>
-  </StyledNavPanel>
-)
 
 export const NavPanelSpacer = styled(StyledNavPanel)`
   background-color: white;
