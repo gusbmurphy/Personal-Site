@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import * as styles from "../styles/workPage.module.css"
 import ReactMarkdown from "react-markdown/with-html"
+import styled from "styled-components"
 import { FAIcon } from "../components/FAIcon"
 import { Devicon } from "../components/Devicon"
 
@@ -15,28 +15,32 @@ function Template({
   if (frontmatter.devicons) {
     frontmatter.devicons.map(devicon =>
       icons.push(
-        <Devicon
-          name={devicon.name}
-          description={devicon.description}
-          id={devicon.name + markdownRemark.id}
-        />
+        <IconContainer>
+          <Devicon
+            name={devicon.name}
+            description={devicon.description}
+            id={devicon.name + markdownRemark.id}
+          />
+        </IconContainer>
       )
     )
   }
   if (frontmatter.faIcons) {
     frontmatter.faIcons.map(faIcon =>
       icons.push(
-        <FAIcon
-          name={faIcon.name}
-          description={faIcon.description}
-          id={faIcon.name + markdownRemark.id}
-        />
+        <IconContainer>
+          <FAIcon
+            name={faIcon.name}
+            description={faIcon.description}
+            id={faIcon.name + markdownRemark.id}
+          />
+        </IconContainer>
       )
     )
   }
 
   let images = frontmatter.imageGallery.map(image => (
-    <img src={image} key={image + markdownRemark.id} />
+    <StyledImage src={image} key={image + markdownRemark.id} />
   ))
 
   let links = frontmatter.links.map(link => (
@@ -48,22 +52,103 @@ function Template({
   ))
 
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.text}>
-        <h1 className={styles.title}>{frontmatter.title}</h1>
-        <div className={styles.icons}>{icons}</div>
-        <div className={styles.date}>{frontmatter.date}</div>
-        <ul className={styles.linkList}>{links}</ul>
-        <p className={styles.description}>
+    <MainContainer>
+      <TextContainer>
+        <Title>{frontmatter.title}</Title>
+        <IconDateContainer>
+          <DateContainer>{frontmatter.date}</DateContainer>
+          {icons}
+        </IconDateContainer>
+        <LinkList>{links}</LinkList>
+        <DescriptionContainer>
           <ReactMarkdown source={frontmatter.description} />
-        </p>
-      </div>
-      <div className={styles.media}>{images}</div>
-    </div>
+        </DescriptionContainer>
+      </TextContainer>
+      <ImagesContainer>{images}</ImagesContainer>
+    </MainContainer>
   )
 }
 
-export default Template;
+const MainContainer = styled.div`
+  display: flex;
+`
+
+const TextContainer = styled.div`
+  flex: 3;
+  padding-right: 2em;
+`
+
+const ImagesContainer = styled.div`
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+
+  & > ${StyledImage}:not(:last-child) {
+    margin-bottom: 1em;
+  }
+`
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 3px 0.3rem rgb(0 0 0 / 25%));
+`
+
+const LinkList = styled.ul`
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.1em;
+  margin-bottom: 0.75em;
+  display: flex;
+  flex-direction: row;
+
+  & > li:not(:last-child) {
+    margin-right: 0.5em;
+  }
+`
+
+const Title = styled.h1`
+  margin-bottom: 0.2em;
+`
+
+const IconDateContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2em;
+  align-items: center;
+`
+
+const DateContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 0.3em;
+`
+
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 0.1em;
+`
+
+const DescriptionContainer = styled.div`
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+
+  & > p:not(:last-child) {
+    margin-bottom: 0.8em;
+  }
+
+  ul {
+    padding-left: 1.2em;
+
+    li:not(:last-child) {
+      margin-bottom: 0.2em;
+    }
+  }
+`
+
+export default Template
 
 export const pageQuery = graphql`
   query WorkByID($slug: String!) {
