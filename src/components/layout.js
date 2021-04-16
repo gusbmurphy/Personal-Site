@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { nord1, nord10 } from "../utils/color-scheme"
+import { nord1, nord10, nord15, nord14 } from "../utils/color-scheme"
 import styled from "styled-components"
 import NavPanel from "./NavPanel"
 import { NavPanelSpacer } from "../styles/NavPanel"
@@ -27,6 +27,14 @@ const PageContent = styled.div`
 
   a {
     color: ${nord10};
+  }
+
+  a:hover {
+    color: ${nord15};
+  }
+
+  a:active {
+    color: ${nord14};
   }
 `
 
