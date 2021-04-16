@@ -21,13 +21,31 @@ const NavPanel = () => (
       <div>
         <IconSection>
           <StyledIconSpan>
-            <FAIcon name="fa fa-github" />
+            <a
+              href="https://github.com/gusbmurphy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FAIcon name="fa fa-github" />
+            </a>
           </StyledIconSpan>
           <StyledIconSpan>
-            <FAIcon name="fa fa-envelope" />
+            <a
+              href="mailto: gusbmurphy@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FAIcon name="fa fa-envelope" />
+            </a>
           </StyledIconSpan>
           <StyledIconSpan>
-            <FAIcon name="fa fa-linkedin-square" />
+            <a
+              href="https://github.com/gusbmurphy"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FAIcon name="fa fa-linkedin-square" />
+            </a>
           </StyledIconSpan>
         </IconSection>
       </div>
