@@ -6,6 +6,8 @@ import {
   nord8,
   nord1,
   nord2,
+  nord9,
+  nord10,
   nord12,
   nord14,
   nord15,
@@ -52,6 +54,14 @@ export const NavLink = styled(Link)`
   color: ${nord2};
   text-decoration: none;
   font-size: 1.55em;
+
+  &:hover {
+    color: ${nord9};
+  }
+
+  &:active {
+    color: ${nord10};
+  }
 
   :not(:last-of-type) {
     margin-bottom: 0.4em;
