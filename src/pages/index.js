@@ -2,11 +2,13 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import { nord6 } from "../utils/color-scheme"
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
-  justify-content: center;
+  align-items: center;
 `
 
 const AboutContainer = styled.div`
@@ -28,6 +30,14 @@ const HeadShotContainer = styled.div`
 const HeadShot = styled(Img)`
   border-radius: 50%;
   filter: drop-shadow(0 8px 0.75rem rgb(0 0 0 / 25%));
+`
+
+const CurrentlyWorkingOnContainer = styled.div`
+  font-style: italic;
+  margin-top: 2em;
+  text-align: center;
+  max-width: 350px;
+  font-size: 0.9em;
 `
 
 export default function About() {
@@ -63,6 +73,21 @@ export default function About() {
           I&apos;ve gotten really good at other not &quot;done&quot;-types too.
         </p>
       </AboutContainer>
+      <CurrentlyWorkingOnContainer>
+        Currently, I&apos;m contributing to{" "}
+        <a href="https://www.17lands.com/" target="_blank" rel="noreferrer">
+          17Lands
+        </a>{" "}
+        and developing a mobile application with React Native to help{" "}
+        <a
+          href="https://www.youtube.com/watch?v=T1j1_aeK6WA"
+          target="_blank"
+          rel="noreferrer"
+        >
+          drummers
+        </a>{" "}
+        figure out what to practice.
+      </CurrentlyWorkingOnContainer>
     </Container>
   )
 }
