@@ -10,6 +10,7 @@ import {
   NavLink,
   IconSection,
   StyledIconSpan,
+  NavIconLink,
 } from "../styles/NavPanel"
 
 const NavPanel = () => (
@@ -28,31 +29,31 @@ const NavPanel = () => (
       <div>
         <IconSection>
           <StyledIconSpan>
-            <a
+            <NavIconLink
               href="https://github.com/gusbmurphy"
               target="_blank"
               rel="noreferrer"
             >
               <FAIcon name="fa fa-github" />
-            </a>
+            </NavIconLink>
           </StyledIconSpan>
           <StyledIconSpan>
-            <a
+            <NavIconLink
               href="mailto: gusbmurphy@gmail.com"
               target="_blank"
               rel="noreferrer"
             >
               <FAIcon name="fa fa-envelope" />
-            </a>
+            </NavIconLink>
           </StyledIconSpan>
           <StyledIconSpan>
-            <a
+            <NavIconLink
               href="https://github.com/gusbmurphy"
               target="_blank"
               rel="noreferrer"
             >
               <FAIcon name="fa fa-linkedin-square" />
-            </a>
+            </NavIconLink>
           </StyledIconSpan>
         </IconSection>
       </div>

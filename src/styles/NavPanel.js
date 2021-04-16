@@ -1,7 +1,15 @@
 import styled from "styled-components"
 import NameGraphic from "../../static/assets/gmname.svg"
 import { Link } from "gatsby"
-import { nord6, nord8, nord1, nord2, nord14 } from "../utils/color-scheme"
+import {
+  nord6,
+  nord8,
+  nord1,
+  nord2,
+  nord12,
+  nord14,
+  nord15,
+} from "../utils/color-scheme"
 
 export const NavPanelWidthInVw = 25
 export const NavPanelPaddingInEm = 2
@@ -56,11 +64,22 @@ export const IconSection = styled.div`
 `
 
 export const StyledIconSpan = styled.span`
-  color: ${nord14};
   font-size: 2em;
 
   :not(:last-of-type) {
     margin-right: 0.4em;
+  }
+`
+
+export const NavIconLink = styled.a`
+  color: ${nord14};
+
+  &:hover {
+    color: ${nord15};
+  }
+
+  &:active {
+    color: ${nord12};
   }
 `
 

@@ -2,7 +2,8 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { nord1, nord10 } from "../utils/color-scheme"
 import styled from "styled-components"
-import NavPanel, { NavPanelSpacer } from "./NavPanel"
+import NavPanel from "./NavPanel"
+import { NavPanelSpacer } from "../styles/NavPanel"
 
 const MainContainer = styled.div`
   width: 100%;
