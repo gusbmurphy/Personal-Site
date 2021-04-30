@@ -47,7 +47,7 @@ const NavPanel = () => (
           </StyledIconSpan>
           <StyledIconSpan>
             <NavIconLink
-              href="https://github.com/gusbmurphy"
+              href="https://www.linkedin.com/in/gusmurphy/"
               target="_blank"
               rel="noreferrer"
             >
