@@ -23,7 +23,6 @@ const NavPanel = () => (
         <Tagline>Trombone & Computer</Tagline>
         <LinkSection>
           <NavLink to="/work">Work</NavLink>
-          {/* <NavLink to="/">Writing</NavLink> */}
         </LinkSection>
       </div>
       <div>
