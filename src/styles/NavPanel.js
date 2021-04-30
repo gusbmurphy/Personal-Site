@@ -13,13 +13,14 @@ import {
   nord15,
 } from "../utils/color-scheme"
 
-export const NavPanelWidthInVw = 25
-export const NavPanelPaddingInEm = 2
+const NavPanelPaddingInEm = 2
+const NavPanelMinWidthInPx = 320
+const NavPanelMaxWidthInPx = 420
+
 export const StyledNavPanel = styled.div`
   background-color: ${nord6};
-  width: ${NavPanelWidthInVw}vw;
-  max-width: 420px;
-  min-width: 320px;
+  max-width: ${NavPanelMaxWidthInPx}px;
+  min-width: ${NavPanelMinWidthInPx}px;
   height: 100vh;
   position: fixed;
   padding: ${NavPanelPaddingInEm}em;
@@ -97,5 +98,6 @@ export const NavPanelSpacer = styled(StyledNavPanel)`
   background-color: white;
   position: static;
   padding: 0;
-  min-width: calc(${NavPanelWidthInVw}vw + ${NavPanelPaddingInEm * 2}em);
+  min-width: calc(${NavPanelMinWidthInPx}px + ${NavPanelPaddingInEm * 2}em);
+  max-width: calc(${NavPanelMaxWidthInPx}px + ${NavPanelPaddingInEm * 2}em);
 `
