@@ -18,8 +18,8 @@ export const NavPanelPaddingInEm = 2
 export const StyledNavPanel = styled.div`
   background-color: ${nord6};
   width: ${NavPanelWidthInVw}vw;
-  max-width: 445px;
-  min-width: 300px;
+  max-width: 420px;
+  min-width: 320px;
   height: 100vh;
   position: fixed;
   padding: ${NavPanelPaddingInEm}em;
