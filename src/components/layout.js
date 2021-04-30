@@ -23,7 +23,6 @@ const PageContent = styled.div`
   padding: 4em;
   box-shadow: inset 25px 0 25px -35px rgb(0 0 0 / 25%);
   width: 100%;
-  max-width: 760px;
 
   a {
     color: ${nord10};
